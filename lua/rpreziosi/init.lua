@@ -15,27 +15,13 @@ vim.opt.signcolumn = "yes"   -- Always show sign column
 -- Command-line history and completion
 vim.opt.history = 1000       -- Store more command history
 vim.opt.wildmenu = true      -- Show command-line completion
-vim.opt.wildmode = "longest:full,full" -- Complete longest common string, then each full match
+vim.opt.wildmode = "list:longest,full" -- First list all matches, then complete the longest common string
+vim.opt.wildoptions = "pum,tagfile" -- Use popup menu for completions and show categories
+vim.opt.pumheight = 15       -- Maximum number of items to show in popup menu
 vim.opt.inccommand = "split" -- Show incremental effects of commands
 vim.opt.ignorecase = true    -- Ignore case when searching
 vim.opt.smartcase = true     -- Override ignorecase when search has uppercase
 
--- Enhanced tab completion for commands
-vim.cmd[[
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-  endfunction
 
-  function! s:show_command_history() abort
-    call feedkeys(":\<Up>", 'n')
-    return ''
-  endfunction
-  
-  cnoremap <expr> <Tab> wildmenumode() ? "\<C-n>" : "\<Tab>"
-  cnoremap <expr> <S-Tab> wildmenumode() ? "\<C-p>" : "\<S-Tab>"
-  cnoremap <C-p> <Up>
-  cnoremap <C-n> <Down>
-]]
 
 require("rpreziosi.lazy_init")

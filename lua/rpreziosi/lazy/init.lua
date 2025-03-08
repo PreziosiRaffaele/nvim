@@ -1,6 +1,6 @@
 return {
   -- Import plugin configurations
-  require("rpreziosi.lazy.tokyonight"),
+  require("rpreziosi.lazy.kanagawa"),
   require("rpreziosi.lazy.treesitter"),
   require("rpreziosi.lazy.telescope"),
   require("rpreziosi.lazy.today"),
@@ -8,4 +8,5 @@ return {
   require("rpreziosi.lazy.gitsigns"),
   require("rpreziosi.lazy.copilot"),
   require("rpreziosi.lazy.neoclip"),
+  require("rpreziosi.lazy.sf"),
 }
