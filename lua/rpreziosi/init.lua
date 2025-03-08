@@ -2,7 +2,7 @@ vim.g.mapleader = " " -- Set leader key before Lazy
 
 -- Basic editor settings
 vim.opt.number = true        -- Show line numbers
-vim.opt.relativenumber = true -- Show relative line numbers
+vim.opt.relativenumber = false -- Don't show relative line numbers, only absolute
 vim.opt.cursorline = true    -- Highlight current line
 vim.opt.wrap = false         -- Don't wrap lines
 vim.opt.expandtab = true     -- Use spaces instead of tabs
