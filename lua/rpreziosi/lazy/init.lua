@@ -7,4 +7,5 @@ return {
   require("rpreziosi.lazy.fugitive"),
   require("rpreziosi.lazy.gitsigns"),
   require("rpreziosi.lazy.copilot"),
+  require("rpreziosi.lazy.neoclip"),
 }
