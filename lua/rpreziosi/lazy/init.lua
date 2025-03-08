@@ -5,4 +5,5 @@ return {
   require("rpreziosi.lazy.telescope"),
   require("rpreziosi.lazy.today"),
   require("rpreziosi.lazy.fugitive"),
+  require("rpreziosi.lazy.copilot"),
 }
