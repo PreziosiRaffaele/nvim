@@ -1,5 +1,6 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "nvim-treesitter": { "branch": "master", "commit": "ee8e149a4ff75ebd5f1b065831746ddaf0e480ec" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "telescope.nvim": { "branch": "master", "commit": "814f102cd1da3dc78c7d2f20f2ef3ed3cdf0e6e4" },
   "today.nvim": { "branch": "main", "commit": "e9fb7f53cfa27d1da7fdb67de4bcba65ca02dc34" },
