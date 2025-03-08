@@ -5,7 +5,7 @@ return {
   config = function()
     require("tokyonight").setup({
       -- your configuration options here
-      style = "storm", -- The theme comes in four styles: storm, moon, night, day
+      style = "night", -- The theme comes in four styles: storm, moon, night, day
       transparent = false,
       terminal_colors = true,
       styles = {

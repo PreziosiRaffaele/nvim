@@ -9,6 +9,7 @@ return {
         "lua", "vim", "vimdoc", "query",
         "javascript", "typescript", "python", "bash",
         "markdown", "markdown_inline", "json", "yaml", 
+        "java", -- Add Java parser for Apex files
       },
       
       -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -33,6 +34,15 @@ return {
           scope_incremental = "<C-s>",
           node_decremental = "<M-space>",
         },
+      },
+    })
+    
+    -- Set filetype detection for Apex files to use Java parser
+    vim.filetype.add({
+      extension = {
+        cls = "java", -- Treat .cls files as Java for syntax highlighting
+        trigger = "java",
+        apex = "java",
       },
     })
   end,
