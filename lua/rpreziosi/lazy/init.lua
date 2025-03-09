@@ -9,4 +9,5 @@ return {
   require("rpreziosi.lazy.copilot"),
   require("rpreziosi.lazy.neoclip"),
   require("rpreziosi.lazy.sf"),
+  require("rpreziosi.lazy.coc"),
 }
