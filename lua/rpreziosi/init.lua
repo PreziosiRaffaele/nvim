@@ -14,9 +14,6 @@ vim.opt.signcolumn = "yes"   -- Always show sign column
 
 -- Command-line history and completion
 vim.opt.history = 1000       -- Store more command history
-vim.opt.wildmenu = true      -- Show command-line completion
-vim.opt.wildmode = "list:longest,full" -- First list all matches, then complete the longest common string
-vim.opt.wildoptions = "pum,tagfile" -- Use popup menu for completions and show categories
 vim.opt.pumheight = 15       -- Maximum number of items to show in popup menu
 vim.opt.inccommand = "split" -- Show incremental effects of commands
 vim.opt.ignorecase = true    -- Ignore case when searching
