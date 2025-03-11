@@ -10,4 +10,5 @@ return {
   require("rpreziosi.lazy.neoclip"),
   require("rpreziosi.lazy.sf"),
   require("rpreziosi.lazy.coc"),
+  require("rpreziosi.lazy.avante")
 }
