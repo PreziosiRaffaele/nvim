@@ -13,4 +13,5 @@ return {
   require("rpreziosi.lazy.lualine"),
   require("rpreziosi.lazy.codecompanion"),
   require("rpreziosi.lazy.neogit"),
+  require("rpreziosi.lazy.diffview")
 }
