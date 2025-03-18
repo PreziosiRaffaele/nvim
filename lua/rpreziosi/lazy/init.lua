@@ -11,5 +11,6 @@ return {
   require("rpreziosi.lazy.sf"),
   require("rpreziosi.lazy.coc"),
   require("rpreziosi.lazy.lualine"),
-  require("rpreziosi.lazy.codecompanion")
+  require("rpreziosi.lazy.codecompanion"),
+  require("rpreziosi.lazy.neogit"),
 }
