@@ -12,4 +12,5 @@ return {
   require("rpreziosi.lazy.neogit"),
   require("rpreziosi.lazy.diffview"),
   require("rpreziosi.lazy.lspconfig"),
+  require("rpreziosi.lazy.cmp"),
 }
