@@ -19,6 +19,8 @@ vim.opt.inccommand = "split" -- Show incremental effects of commands
 vim.opt.ignorecase = true    -- Ignore case when searching
 vim.opt.smartcase = true     -- Override ignorecase when search has uppercase
 
+-- Use the system clipboard by default for yank and paste
+vim.opt.clipboard = "unnamedplus"
 
 
 require("rpreziosi.lazy_init")
