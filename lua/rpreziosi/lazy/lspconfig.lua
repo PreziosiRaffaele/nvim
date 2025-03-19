@@ -4,9 +4,9 @@ return {
     local lspconfig = require("lspconfig")
 
     -- Apex Language Server configuration
-    lspconfig.apex_ls.setup({
+    lspconfig.apex_ls.setup({ 
       cmd = { "apex-jorje-lsp" }, -- Path to the Apex Language Server executable
-      filetypes = { "apex" },     -- Filetypes to associate with the server
+      filetypes = { "apex", "soql", "trigger" },     -- Filetypes to associate with the server
       root_dir = lspconfig.util.root_pattern(".git", "sfdx-project.json"), -- Root directory
       settings = {},              -- Additional settings if needed
     })
