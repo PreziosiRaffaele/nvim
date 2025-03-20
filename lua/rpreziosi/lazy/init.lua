@@ -14,3 +14,4 @@ return {
   require("rpreziosi.lazy.lspconfig"),
   require("rpreziosi.lazy.cmp"),
 }
+
