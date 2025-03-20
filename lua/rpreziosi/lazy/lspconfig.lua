@@ -14,6 +14,15 @@ return {
       filetypes = { "apex", "soql", "trigger" },     -- Filetypes to associate with the server
       root_dir = lspconfig.util.root_pattern(".git", "sfdx-project.json"), -- Root directory
       settings = {},              -- Additional settings if needed
+      apex_enable_semantic_errors = false, -- Whether to allow Apex Language Server to surface semantic errors
+      apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
+      capabilities = capabilities, -- Add capabilities for autocompletion
+    })
+
+    -- Javascript/Typescript Language Server configuration
+    lspconfig.ts_ls.setup({
+      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }, -- Filetypes
+      root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"), -- Root directory
       capabilities = capabilities, -- Add capabilities for autocompletion
     })
 
