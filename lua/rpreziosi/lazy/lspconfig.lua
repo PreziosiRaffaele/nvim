@@ -26,6 +26,13 @@ return {
       capabilities = capabilities, -- Add capabilities for autocompletion
     })
 
+    -- EsLint Language Server configuration
+    lspconfig.eslint.setup({
+      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }, -- Filetypes
+      root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json", "package.json", ".git"), -- Root directory
+      capabilities = capabilities, -- Add capabilities for autocompletion
+    })
+
     -- HTML Language Server configuration
     lspconfig.html.setup({
       filetypes = { "html" }, -- Filetypes
