@@ -26,6 +26,12 @@ return {
       capabilities = capabilities, -- Add capabilities for autocompletion
     })
 
+    -- HTML Language Server configuration
+    lspconfig.html.setup({
+      filetypes = { "html" }, -- Filetypes
+      capabilities = capabilities, -- Add capabilities for autocompletion
+    })
+
     -- General LSP keybindings
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
