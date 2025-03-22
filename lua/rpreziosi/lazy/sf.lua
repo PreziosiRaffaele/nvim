@@ -1,5 +1,5 @@
 return {
-  'PreziosiRaffaele/sf.nvim',
+  'xixiaofinland/sf.nvim',
 
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
@@ -25,5 +25,6 @@ return {
     vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "run all test in this file with coverage" })
     vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "test this under cursor" })
     vim.keymap.set("n", "<leader>tT", Sf.run_current_test_with_coverage, { desc = "test this under cursor with coverage info" })
+    vim.keymap.set('n', '<leader>sg', function() require('sf').run('sf meta open -f ' .. vim.fn.expand('%:p')) end, { noremap = true, silent = true, desc = 'run meta open with current file' })
   end
 }
