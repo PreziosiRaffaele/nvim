@@ -1,5 +1,5 @@
 return {
-  'xixiaofinland/sf.nvim',
+  'PreziosiRaffaele/sf.nvim',
 
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
@@ -18,9 +18,9 @@ return {
     vim.keymap.set("n", "<leader>sD", Sf.diff_in_org, { desc = "diff in org..." })
     vim.keymap.set("n", "<leader>sp", Sf.save_and_push, { desc = "push current file" })
     vim.keymap.set("n", "<leader>sr", Sf.retrieve, { desc = "retrieve current file" })
-
+    vim.keymap.set("n", "<leader>so", Sf.org_open, { desc = "open org" })
     -- Test related keymaps
-    vim.keymap.set("n", "<leader>tsc", Sf.toggle_sign, { desc = "toggle signs for code coverage" })
+    vim.keymap.set("n", "<leader>ts", Sf.toggle_sign, { desc = "toggle signs for code coverage" })
     vim.keymap.set("n", "<leader>ta", Sf.run_all_tests_in_this_file, { desc = "run all tests in this file" })
     vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "run all test in this file with coverage" })
     vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "test this under cursor" })
