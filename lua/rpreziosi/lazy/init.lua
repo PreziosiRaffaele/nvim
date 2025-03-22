@@ -9,7 +9,7 @@ return {
   require("rpreziosi.lazy.sf"),
   require("rpreziosi.lazy.lualine"),
   require("rpreziosi.lazy.codecompanion"),
-  require("rpreziosi.lazy.neogit"),
+  require("rpreziosi.lazy.fugitive"),
   require("rpreziosi.lazy.diffview"),
   require("rpreziosi.lazy.lspconfig"),
   require("rpreziosi.lazy.cmp"),
