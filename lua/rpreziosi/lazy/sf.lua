@@ -53,5 +53,10 @@ return {
       { noremap = true, silent = true, desc = 'run meta open with current file' })
     vim.keymap.set('n', '<leader>se', function() require('sf').run('sf apex run -f ' .. vim.fn.expand('%:p')) end,
       { noremap = true, silent = true, desc = 'execute apex script' })
-  end
+    --PMD issues
+    vim.keymap.set('n', '<leader>si', function() require('sf').run('sf scanner run -f table --pmdconfig ./rules/RandstadPMDRules.xml -t ' .. vim.fn.expand('%:p')) end,
+      { noremap = true, silent = true, desc = 'run pmd scanner with current file' })
+
+
+    end
 }
