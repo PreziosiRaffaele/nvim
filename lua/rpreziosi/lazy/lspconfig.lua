@@ -46,8 +46,5 @@ return {
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
     vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find references" })
-    vim.keymap.set("n", "<leader>f", function()
-      vim.lsp.buf.format({ async = true })
-    end, { desc = "Format document" })
   end,
 }
