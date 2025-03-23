@@ -5,7 +5,6 @@ return {
   require("rpreziosi.lazy.telescope"),
   require("rpreziosi.lazy.gitsigns"),
   require("rpreziosi.lazy.copilot"),
-  require("rpreziosi.lazy.neoclip"),
   require("rpreziosi.lazy.sf"),
   require("rpreziosi.lazy.lualine"),
   require("rpreziosi.lazy.codecompanion"),
