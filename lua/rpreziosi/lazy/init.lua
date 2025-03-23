@@ -13,5 +13,6 @@ return {
   require("rpreziosi.lazy.lspconfig"),
   require("rpreziosi.lazy.cmp"),
   require("rpreziosi.lazy.whichkey"),
+  require("rpreziosi.lazy.sleuth"),
 }
 
