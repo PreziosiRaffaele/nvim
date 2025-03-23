@@ -14,5 +14,6 @@ return {
   require("rpreziosi.lazy.cmp"),
   require("rpreziosi.lazy.whichkey"),
   require("rpreziosi.lazy.sleuth"),
+  require("rpreziosi.lazy.oil")
 }
 
