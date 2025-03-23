@@ -39,6 +39,13 @@ return {
       capabilities = capabilities, -- Add capabilities for autocompletion
     })
 
+    -- LUA Language Server configuration
+    lspconfig.lua_ls.setup{
+      capabilities = capabilities, -- Add capabilities for autocompletion
+      filetypes = { "lua" }, -- Filetypes    
+    }
+
+
     -- General LSP keybindings
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
