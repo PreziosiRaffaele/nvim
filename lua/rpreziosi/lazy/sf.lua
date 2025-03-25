@@ -22,7 +22,7 @@ return {
         "LightningComponentBundle"
       },
       -- the folder this plugin uses to store intermediate data. It's under the sf project root directory.
-      plugin_folder_name = '/sf_cache/',
+      plugin_folder_name = '.sfdx/sf_cache/',
 
       -- after the test running with code coverage completes, display uncovered line sign automatically.
       -- you can set it to `false`, then manually run toggle_sign command.
@@ -37,8 +37,13 @@ return {
     vim.keymap.set("n", "<leader>sd", Sf.diff_in_target_org, { desc = "diff in target_org" })
     vim.keymap.set("n", "<leader>sD", Sf.diff_in_org, { desc = "diff in org..." })
     vim.keymap.set("n", "<leader>sp", Sf.save_and_push, { desc = "push current file" })
-    vim.keymap.set("n", "<leader>sfp", function() require('sf').run('sf project deploy start --ignore-conflicts -d ' .. vim.fn.expand('%:p')) end,
+    vim.keymap.set("n", "<leader>sfp",
+      function() require('sf').run('sf project deploy start --ignore-conflicts -d ' .. vim.fn.expand('%:p')) end,
       { desc = "push current file ignore conflicts" })
+    vim.keymap.set("n", "<leader>sfr",
+      function() require('sf').run('sf project retrieve start --ignore-conflicts -d ' .. vim.fn.expand('%:p')) end,
+      { desc = "retrieve current file ignore conflicts" })
+
     vim.keymap.set("n", "<leader>sr", Sf.retrieve, { desc = "retrieve current file" })
     vim.keymap.set("n", "<leader>so", Sf.org_open, { desc = "open org" })
     -- Test related keymaps
@@ -55,9 +60,9 @@ return {
       { noremap = true, silent = true, desc = 'execute apex script' })
     vim.keymap.set('n', '<leader>sl', Sf.pull_log, { desc = 'pull logs' })
     --PMD issues
-    vim.keymap.set('n', '<leader>si', function() require('sf').run('sf scanner run -f table --pmdconfig ./rules/RandstadPMDRules.xml -t ' .. vim.fn.expand('%:p')) end,
+    vim.keymap.set('n', '<leader>si',
+      function() require('sf').run('sf scanner run -f table --pmdconfig ./rules/RandstadPMDRules.xml -t ' ..
+        vim.fn.expand('%:p')) end,
       { noremap = true, silent = true, desc = 'run pmd scanner with current file' })
-
-
-    end
+  end
 }
