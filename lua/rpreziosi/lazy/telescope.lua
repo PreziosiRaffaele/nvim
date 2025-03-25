@@ -9,8 +9,35 @@ return {
   },
   config = function()
     require("telescope").setup({
+      pickers = {
+        find_files = {
+          theme = "ivy",
+        },
+        live_grep = {
+          theme = "ivy",
+        },
+        grep_string = {
+          theme = "ivy",
+        },
+        git_commits = {
+          theme = "ivy",
+        },
+        git_bcommits = {
+          theme = "ivy",
+        },
+        git_status = {
+          theme = "ivy",
+        },
+        help_tags = {
+          theme = "ivy",
+        },
+      },
       extensions = {
         fzf = {
+          fuzzy = true,               -- false will only do exact matching
+          override_generic_sorter = true, -- override the generic sorter
+          override_file_sorter = true, -- override the file sorter
+          case_mode = "smart_case",
         },
       },
     })
@@ -20,7 +47,11 @@ return {
     vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
     vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
     vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
-    vim.keymap.set("n", "<leader>faf", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
-      { desc = "Find all files" })
+    vim.keymap.set("n", "<leader>faf", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", { desc = "Find all files" })
+    vim.keymap.set("n", "<leader>fn", function()
+      require("telescope.builtin").find_files {
+        cwd = vim.fn.stdpath("config"),
+      }
+    end, { desc = "Find files in nvim config" })
   end,
 }
