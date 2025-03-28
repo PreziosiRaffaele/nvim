@@ -16,5 +16,6 @@ return {
   require("rpreziosi.lazy.sleuth"),
   require("rpreziosi.lazy.oil"),
   require("rpreziosi.lazy.plant"),
+  require("rpreziosi.lazy.tmuxnavigator"),
 }
 
