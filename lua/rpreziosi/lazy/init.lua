@@ -19,5 +19,6 @@ return {
   require("rpreziosi.lazy.tmuxnavigator"),
   require("rpreziosi.lazy.indentBlackLine"),
   require("rpreziosi.lazy.comment"),
+  require("rpreziosi.lazy.nvimlint"),
 }
 
