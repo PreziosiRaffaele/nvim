@@ -17,5 +17,6 @@ return {
   require("rpreziosi.lazy.oil"),
   require("rpreziosi.lazy.plant"),
   require("rpreziosi.lazy.tmuxnavigator"),
+  require("rpreziosi.lazy.indentBlackLine"),
 }
 

@@ -44,7 +44,12 @@ return {
       capabilities = capabilities, -- Add capabilities for autocompletion
       filetypes = { "lua" }, -- Filetypes    
     }
-
+    
+    -- CSS Language Server configuration
+    lspconfig.cssls.setup({
+      filetypes = { "css", "scss", "less" }, -- Filetypes
+      capabilities = capabilities, -- Add capabilities for autocompletion
+    })
 
     -- General LSP keybindings
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
