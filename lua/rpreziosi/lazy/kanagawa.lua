@@ -6,6 +6,6 @@ return {
     require("kanagawa").setup({
       -- You can customize the theme here
     })
-    vim.cmd([[colorscheme kanagawa-dragon]])
+    vim.cmd([[colorscheme kanagawa-wave]])
   end,
 }

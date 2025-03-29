@@ -18,5 +18,6 @@ return {
   require("rpreziosi.lazy.plant"),
   require("rpreziosi.lazy.tmuxnavigator"),
   require("rpreziosi.lazy.indentBlackLine"),
+  require("rpreziosi.lazy.comment"),
 }
 
