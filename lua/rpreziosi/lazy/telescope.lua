@@ -72,7 +72,7 @@ return {
     })
     require("telescope").load_extension("fzf")
     -- Set keymaps
-    vim.keymap.set("n", "<leader>fv", "<cmd>Telescope git_bcommits<cr>", { desc = "Git BCommits" })
+    vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Telescope registers" })
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Git Commits" })
     vim.keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })

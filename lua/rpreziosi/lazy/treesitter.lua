@@ -7,7 +7,7 @@ return {
   build = ':TSUpdate',
   config = function()
     require("nvim-treesitter.configs").setup({
-      ensure_installed = { "apex", "bash", "haskell", "nix", "rust", "soql", "sosl", "lua", "vim", "vimdoc", "markdown" },
+      ensure_installed = { "apex", "bash", "haskell", "nix", "rust", "soql", "sosl","javascript","typescript", "lua", "vim", "vimdoc", "markdown", "json", "jsonc", "html" },
       auto_install = true,
 
       highlight = {
@@ -91,7 +91,13 @@ return {
             -- ["<leader>p:"] = "@property.outer",  -- swap object property with prev
           },
         },
+        fold = { enable = true },
       },
     })
+
+    vim.opt.foldmethod = "expr"
+    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+    vim.opt.foldlevel = 99
+    vim.opt.foldenable = true
   end,
 }

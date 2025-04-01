@@ -10,5 +10,9 @@ return {
       { desc = "File History (Current File) no merges" })
     vim.api.nvim_set_keymap("n", "<leader>dm", ":DiffviewFileHistory --max-count=60 %<CR>",
       { desc = "File History (Current File)" })
+    vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory --no-merges --max-count=60<CR>",
+      { desc = "File History (Current Directory) no merges" })
+    vim.api.nvim_set_keymap("n", "<leader>dl", ":DiffviewFileHistory --max-count=60<CR>",
+      { desc = "File History (Current Directory)" })
   end,
 }
