@@ -7,12 +7,12 @@ return {
     vim.api.nvim_set_keymap("n", "<leader>dc", ":DiffviewClose<CR>", { desc = "Close DiffView" })
     -- File history
     vim.api.nvim_set_keymap("n", "<leader>df", ":DiffviewFileHistory --no-merges --max-count=60 %<CR>",
-      { desc = "File History (Current File) no merges" })
+      { desc = "Git File History (NO MERGES)" })
     vim.api.nvim_set_keymap("n", "<leader>dm", ":DiffviewFileHistory --max-count=60 %<CR>",
-      { desc = "File History (Current File)" })
+      { desc = "Git File History" })
     vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory --no-merges --max-count=60<CR>",
-      { desc = "File History (Current Directory) no merges" })
+      { desc = "Git Current Directory History (NO MERGES)" })
     vim.api.nvim_set_keymap("n", "<leader>dl", ":DiffviewFileHistory --max-count=60<CR>",
-      { desc = "File History (Current Directory)" })
+      { desc = "Git Current Directory History" })
   end,
 }
