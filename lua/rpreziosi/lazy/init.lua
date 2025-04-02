@@ -13,7 +13,6 @@ return {
   require("rpreziosi.lazy.lspconfig"),
   require("rpreziosi.lazy.cmp"),
   require("rpreziosi.lazy.whichkey"),
-  require("rpreziosi.lazy.sleuth"),
   require("rpreziosi.lazy.oil"),
   require("rpreziosi.lazy.plant"),
   require("rpreziosi.lazy.tmuxnavigator"),
