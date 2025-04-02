@@ -28,6 +28,8 @@ local function setup()
   -- Shortcuts for quickfix navigation
   vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
   vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })
+  -- diagnostics
+  vim.diagnostic.config({ virtual_text = true })
 end
 
 return { setup = setup }
