@@ -47,13 +47,11 @@ return {
     vim.keymap.set("n", "<leader>sr", Sf.retrieve, { desc = "retrieve current file" })
     vim.keymap.set("n", "<leader>so", Sf.org_open, { desc = "open org" })
     -- Test related keymaps
-    -- vim.keymap.set("n", "<leader>ts", Sf.toggle_sign, { desc = "toggle signs for code coverage" })
-    -- vim.keymap.set("n", "<leader>ta", Sf.run_all_tests_in_this_file, { desc = "run all tests in this file" })
-    -- vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "run all test in this file with coverage" })
-    -- vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "test this under cursor" })
-    -- vim.keymap.set("n", "<leader>tT", Sf.run_current_test_with_coverage, { desc = "test this under cursor with coverage info" })
-    vim.keymap.set('n', '<leader>tf', function() require('sf').run('sf apex run test -r "human" -w 10 -t ' .. vim.fn.expand('%:t:r')) end,
-      { noremap = true, silent = true, desc = 'run test with current file' })
+    vim.keymap.set("n", "<leader>ts", Sf.toggle_sign, { desc = "toggle signs for code coverage" })
+    vim.keymap.set("n", "<leader>ta", Sf.run_all_tests_in_this_file, { desc = "run all tests in this file" })
+    vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "run all test in this file with coverage" })
+    vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "test this under cursor" })
+    vim.keymap.set("n", "<leader>tT", Sf.run_current_test_with_coverage, { desc = "test this under cursor with coverage info" })
     vim.keymap.set('n', '<leader>sg', function() require('sf').run('sf meta open -f ' .. vim.fn.expand('%:p')) end,
       { noremap = true, silent = true, desc = 'run meta open with current file' })
     vim.keymap.set('n', '<leader>se', function() require('sf').run('sf apex run -f ' .. vim.fn.expand('%:p')) end,
