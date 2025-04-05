@@ -7,7 +7,6 @@ return {
   require("rpreziosi.lazy.copilot"),
   require("rpreziosi.lazy.sf"),
   require("rpreziosi.lazy.lualine"),
-  require("rpreziosi.lazy.codecompanion"),
   require("rpreziosi.lazy.fugitive"),
   require("rpreziosi.lazy.diffview"),
   require("rpreziosi.lazy.lspconfig"),
@@ -19,5 +18,7 @@ return {
   require("rpreziosi.lazy.indentBlackLine"),
   require("rpreziosi.lazy.comment"),
   require("rpreziosi.lazy.nvimlint"),
+  require("rpreziosi.lazy.avante"),
 }
+
 

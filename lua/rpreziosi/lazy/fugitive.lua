@@ -10,5 +10,6 @@ return {
         vim.keymap.set('n', '<leader>gF', ':Git push --force<CR>', { desc = "Git force push" })
         vim.keymap.set('n', '<leader>gA', ':Git commit --amend<CR>', { desc = "Git amend commit" })
         vim.keymap.set('n', '<leader>gC', ':Git checkout -b ', { desc = "Create new branch" }) -- Type new branch name
+        vim.keymap.set('n', '<leader>gR', ':Git restore .<CR>', { desc = "Git restore all" })
     end
 }
