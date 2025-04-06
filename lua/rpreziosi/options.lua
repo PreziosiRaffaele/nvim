@@ -32,6 +32,12 @@ local function setup()
     vim.diagnostic.config({ virtual_text = true, signs = true })
     -- Ensure ESC works normally no remap
     vim.keymap.set("i", "<Esc>", "<Esc>", { noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>cn", function()
+        local filename = vim.fn.expand("%:t") -- e.g., "EndAssignment.flow-meta.xml"
+        local base = filename:match("^[^%.]+") -- extract before first dot
+        vim.fn.setreg("+", base)
+        print("Copied to clipboard: " .. base)
+    end, { desc = "Copy filename in the clipboard" })
 end
 
 return { setup = setup }
