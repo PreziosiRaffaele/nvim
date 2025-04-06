@@ -28,6 +28,14 @@ return {
             temperature = 0,
             max_tokens = 10000,
         },
+        dual_boost = {
+            enabled = false,
+            first_provider = "copilot",
+            second_provider = "openai",
+            prompt =
+            "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
+            timeout = 60000, -- Timeout in milliseconds
+        },
     },
     keys = {
         { '<leader>aC', '<cmd>AvanteClear<cr>', desc = 'Avante - Clear' },

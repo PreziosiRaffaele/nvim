@@ -95,7 +95,14 @@ return {
             },
         })
 
-        vim.keymap.set('n', '<leader>bf', ':TSTextobjectSelect @function.outer<CR>', { desc = "Select entire function (Treesitter)" })
+        vim.keymap.set('n', '<leader>bfo', ':TSTextobjectSelect @function.outer<CR>', { desc = "Select entire function (Treesitter)" })
+        vim.keymap.set('n', '<leader>bfi', ':TSTextobjectSelect @function.inner<CR>', { desc = "Select inner function (Treesitter)" })
+        vim.keymap.set('n', '<leader>bco', ':TSTextobjectSelect @class.outer<CR>', { desc = "Select entire class (Treesitter)" })
+        vim.keymap.set('n', '<leader>bci', ':TSTextobjectSelect @class.inner<CR>', { desc = "Select inner class (Treesitter)" })
+        vim.keymap.set('n', '<leader>bii', ':TSTextobjectSelect @conditional.inner<CR>', { desc = "Select entire conditional (Treesitter)" })
+        vim.keymap.set('n', '<leader>bio', ':TSTextobjectSelect @conditional.outer<CR>', { desc = "Select inner conditional (Treesitter)" })
+        vim.keymap.set('n', '<leader>blo', ':TSTextobjectSelect @loop.outer<CR>', { desc = "Select entire loop (Treesitter)" })
+        vim.keymap.set('n', '<leader>bli', ':TSTextobjectSelect @loop.inner<CR>', { desc = "Select inner loop (Treesitter)" })
         vim.opt.foldmethod = "expr"
         vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
         vim.opt.foldlevel = 99
