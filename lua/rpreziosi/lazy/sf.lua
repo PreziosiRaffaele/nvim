@@ -36,7 +36,7 @@ return {
     vim.keymap.set("n", "<leader>ss", Sf.set_target_org, { desc = "set target_org" })
     vim.keymap.set("n", "<leader>sd", Sf.diff_in_target_org, { desc = "diff in target_org" })
     vim.keymap.set("n", "<leader>sD", Sf.diff_in_org, { desc = "diff in org..." })
-    vim.keymap.set("n", "<leader>sp", Sf.save_and_push, { desc = "push current file" })
+    vim.keymap.set("n", "<leader>sp", Sf.save_and_push, { desc = "Deploy metadata to the org" })
     vim.keymap.set("n", "<leader>sfp",
       function() require('sf').run('sf project deploy start --ignore-conflicts -d ' .. vim.fn.expand('%:p')) end,
       { desc = "push current file ignore conflicts" })

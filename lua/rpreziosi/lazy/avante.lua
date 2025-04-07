@@ -10,16 +10,16 @@ return {
             proxy = nil,            -- [protocol://]host[:port] Use this proxy
             allow_insecure = false, -- Do not allow insecure server connections
             timeout = 30000,        -- Timeout in milliseconds
-            temperature = 0.1,      -- kinda creative
-            max_tokens = 10000,
+            temperature = 0.1,
+            max_tokens = 20000,     -- kinda creative
         },
         openai = {
             endpoint = "https://api.openai.com/v1",
-            model = "gpt-4o",  -- your desired model (or use gpt-4o, etc.)
-            timeout = 30000,   -- Timeout in milliseconds, increase this for reasoning models
+            model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+            timeout = 30000,  -- Timeout in milliseconds, increase this for reasoning models
             temperature = 0,
-            max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-            --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+            max_tokens = 10000,
+            disable_tools = true,
         },
         claude = {
             endpoint = "https://api.anthropic.com",
@@ -27,6 +27,7 @@ return {
             timeout = 30000, -- Timeout in milliseconds
             temperature = 0,
             max_tokens = 10000,
+            disable_tools = true,
         },
         dual_boost = {
             enabled = false,
@@ -34,7 +35,33 @@ return {
             second_provider = "openai",
             prompt =
             "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
-            timeout = 60000, -- Timeout in milliseconds
+            timeout = 90000, -- Timeout in milliseconds
+        },
+        behaviour = {
+            auto_suggestions = false, -- Experimental stage
+            auto_set_highlight_group = true,
+            auto_set_keymaps = true,
+            auto_apply_diff_after_generation = true,
+            support_paste_from_clipboard = false,
+            minimize_diff = true,                -- Whether to remove unchanged lines when applying a code block
+            enable_token_counting = true,        -- Whether to enable token counting. Default to true.
+            enable_cursor_planning_mode = false, -- Whether to enable Cursor Planning Mode. Default to false.
+            enable_claude_text_editor_tool_mode = false, -- Whether to enable Claude Text Editor Tool Mode.
+        },
+
+        vendors = {
+            copilot_gpt4o = {
+                __inherited_from = "copilot",
+                model = "gpt-4o",
+                max_tokens = 20000,
+                disable_tools = true,
+            },
+            copilot_claudeThought = {
+                __inherited_from = "copilot",
+                model = "claude-3.7-sonnet-thought",
+                max_tokens = 20000,
+                disable_tools = true,
+            },
         },
     },
     keys = {
