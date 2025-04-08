@@ -26,7 +26,7 @@ return {
 
       -- after the test running with code coverage completes, display uncovered line sign automatically.
       -- you can set it to `false`, then manually run toggle_sign command.
-      auto_display_code_sign = true,
+      auto_display_code_sign = false,
     }) -- Important to call setup() to initialize the plugin!
 
 
