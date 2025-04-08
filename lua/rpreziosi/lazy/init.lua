@@ -19,6 +19,7 @@ return {
   require("rpreziosi.lazy.comment"),
   require("rpreziosi.lazy.nvimlint"),
   require("rpreziosi.lazy.avante"),
+  require("rpreziosi.lazy.surround"),
 }
 
 
