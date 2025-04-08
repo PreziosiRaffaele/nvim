@@ -47,7 +47,6 @@ return {
     vim.keymap.set("n", "<leader>sr", Sf.retrieve, { desc = "retrieve current file" })
     vim.keymap.set("n", "<leader>so", Sf.org_open, { desc = "open org" })
     -- Test related keymaps
-    vim.keymap.set("n", "<leader>ts", Sf.toggle_sign, { desc = "toggle signs for code coverage" })
     vim.keymap.set("n", "<leader>ta", Sf.run_all_tests_in_this_file, { desc = "run all tests in this file" })
     vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "run all test in this file with coverage" })
     vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "test this under cursor" })
@@ -58,9 +57,9 @@ return {
       { noremap = true, silent = true, desc = 'execute apex script' })
     vim.keymap.set('n', '<leader>sl', Sf.pull_log, { desc = 'pull logs' })
     --PMD issues
-    vim.keymap.set('n', '<leader>si',
-      function() require('sf').run('sf scanner run -f table --pmdconfig ./rules/RandstadPMDRules.xml -t ' ..
-        vim.fn.expand('%:p')) end,
-      { noremap = true, silent = true, desc = 'run pmd scanner with current file' })
+    -- vim.keymap.set('n', '<leader>si',
+    --   function() require('sf').run('sf scanner run -f table --pmdconfig ./rules/RandstadPMDRules.xml -t ' ..
+    --     vim.fn.expand('%:p')) end,
+    --   { noremap = true, silent = true, desc = 'run pmd scanner with current file' })
   end
 }
