@@ -199,6 +199,12 @@ local function show_coverage_selection(class_name)
     end)
 end
 
+-- Function to clean coverage signs
+function M.clean_coverage()
+    clean_coverage()
+    notify.info("Apex coverage signs cleared")
+end
+
 -- Main function to get coverage
 function M.get_coverage()
     -- Check if current file is valid
@@ -234,9 +240,23 @@ function M.setup()
         desc = 'Show Apex code coverage for current class/trigger',
         force = true,
     })
+
+    vim.api.nvim_create_user_command('ApexCoverageClean', function()
+        M.clean_coverage()
+    end, {
+        desc = 'Clear Apex code coverage signs',
+        force = true,
+    })
+
     -- Add leader tc shortcut for ApexCoverage
     vim.keymap.set('n', '<leader>tc', ':ApexCoverage<CR>', {
         desc = 'Show Apex code coverage for current class/trigger',
+        silent = true
+    })
+
+    -- Add leader tC shortcut for ApexCoverageClean
+    vim.keymap.set('n', '<leader>tC', ':ApexCoverageClean<CR>', {
+        desc = 'Clear Apex code coverage signs',
         silent = true
     })
     return M
