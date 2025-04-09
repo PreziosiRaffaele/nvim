@@ -15,11 +15,9 @@ return {
         },
         openai = {
             endpoint = "https://api.openai.com/v1",
-            model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+            model = "o3-mini-2025-01-31", -- your desired model 
             timeout = 30000,  -- Timeout in milliseconds, increase this for reasoning models
             temperature = 0,
-            max_tokens = 10000,
-            disable_tools = true,
         },
         claude = {
             endpoint = "https://api.anthropic.com",
