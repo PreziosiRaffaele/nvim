@@ -15,6 +15,9 @@ return {
                     dismiss = "<C-\\>",     -- Ctrl+E to dismiss suggestion
                 },
             },
+            filetypes = {
+                markdown = true,  -- Disable for markdown files
+            },
             panel = {
                 enabled = true, -- disable the Copilot panel
             },

@@ -8,7 +8,7 @@ return {
     -- File history
     vim.api.nvim_set_keymap("n", "<leader>df", ":DiffviewFileHistory --no-merges --max-count=60 %<CR>",
       { desc = "Git File History (NO MERGES)" })
-    vim.api.nvim_set_keymap("n", "<leader>dm", ":DiffviewFileHistory --max-count=60 %<CR>",
+    vim.api.nvim_set_keymap("n", "<leader>dr", ":DiffviewFileHistory --max-count=60 %<CR>",
       { desc = "Git File History" })
     vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory --no-merges --max-count=1000<CR>",
       { desc = "Git Current Directory History (NO MERGES)" })
@@ -51,7 +51,7 @@ return {
             filter = string.format('--author="%s"', author)
           end
 
-          local cmd = string.format(":DiffviewFileHistory %s --no-merges --max-count=1000<CR>", filter)
+          local cmd = string.format(":DiffviewFileHistory %s --no-merges --max-count=200<CR>", filter)
           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, false, true), "n", true)
 
           -- Notify user about the selected author
@@ -60,8 +60,24 @@ return {
       end)
     end, { desc = "Show file history filtered by author" })
 
-    -- Add keymap for the new command
+    -- Ad keymap for the new command
     vim.api.nvim_set_keymap("n", "<leader>da", ":DiffviewFileHistoryByAuthor<CR>",
-      { desc = "Git History By Author" })
+      { desc = "Search commits by Author" })
+    -- Custom function to filter commits by message content
+    vim.api.nvim_create_user_command('DiffviewFileHistoryByMessage', function()
+      vim.ui.input({
+        prompt = "Enter commit message search term: ",
+      }, function(input)
+        if input and input ~= "" then
+          local cmd = string.format(":DiffviewFileHistory --grep=\"%s\" --no-merges --max-count=200<CR>", input)
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, false, true), "n", true)
+          -- Notify user about the search term
+          vim.notify("Showing commits containing: " .. input, vim.log.levels.INFO)
+        end
+      end)
+    end, { desc = "Show file history filtered by commit message" })
+    -- Add keymap for the commit message search
+    vim.api.nvim_set_keymap("n", "<leader>dm", ":DiffviewFileHistoryByMessage<CR>",
+      { desc = "Search commits by message" })
   end,
 }
