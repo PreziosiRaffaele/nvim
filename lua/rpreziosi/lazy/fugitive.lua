@@ -10,7 +10,7 @@ return {
         vim.keymap.set('n', '<leader>gF', ':Git push --force<CR>', { desc = "Git force push" })
         vim.keymap.set('n', '<leader>gA', ':Git commit --amend<CR>', { desc = "Git amend commit" })
         vim.keymap.set('n', '<leader>gC', ':Git checkout -b ', { desc = "Create new branch" }) -- Type new branch name
-        vim.keymap.set('n', '<leader>gR', function()
+        vim.keymap.set('n', '<leader>ra', function()
             vim.ui.select({ 'Yes', 'No' }, {
                 prompt = 'Are you sure you want to restore all files?',
             }, function(choice)
@@ -19,6 +19,15 @@ return {
                 end
             end)
         end, { desc = "Git restore all (with confirmation)" })
+        vim.keymap.set('n', '<leader>rf', function()
+            vim.ui.select({ 'Yes', 'No' }, {
+                prompt = 'Are you sure you want to restore the current file?',
+            }, function(choice)
+                if choice == 'Yes' then
+                    vim.cmd('Git restore %')
+                end
+            end)
+        end, { desc = "Git restore current file (with confirmation)" })
         vim.keymap.set('n', '<leader>gx', function()
             vim.ui.select({ 'Yes', 'No' }, {
                 prompt = 'Are you sure you want to clean untracked files?',
