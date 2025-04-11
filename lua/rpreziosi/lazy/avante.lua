@@ -18,6 +18,7 @@ return {
             model = "o3-mini-2025-01-31", -- your desired model 
             timeout = 30000,  -- Timeout in milliseconds, increase this for reasoning models
             temperature = 0,
+            reasoning_effort = 'high'
         },
         claude = {
             endpoint = "https://api.anthropic.com",
