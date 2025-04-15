@@ -10,13 +10,12 @@ return {
       { desc = "Git File History (NO MERGES)" })
     vim.api.nvim_set_keymap("n", "<leader>dr", ":DiffviewFileHistory --max-count=100 %<CR>",
       { desc = "Git File History" })
-    vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory --no-merges --max-count=1000<CR>",
+    vim.api.nvim_set_keymap("n", "<leader>dd", ":DiffviewFileHistory --no-merges --max-count=1000<CR>",
       { desc = "Git Current Directory History (NO MERGES)" })
-    vim.api.nvim_set_keymap("n", "<leader>dl", ":DiffviewFileHistory --max-count=1000<CR>",
+    vim.api.nvim_set_keymap("n", "<leader>dh", ":DiffviewFileHistory --max-count=1000<CR>",
       { desc = "Git Current Directory History" })
     vim.api.nvim_set_keymap("n", "<leader>ds", ":DiffviewFileHistory -g --range=stash<CR>",
       { desc = "Git Stash History" })
-
     -- Custom function to list commits by author
     vim.api.nvim_create_user_command('DiffviewFileHistoryByAuthor', function()
       -- Get list of authors from git
