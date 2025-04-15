@@ -42,6 +42,12 @@ return {
                 help_tags = {
                     theme = "ivy",
                 },
+                git_stash = {
+                    theme = "ivy",
+                },
+                diagnostics = {
+                    theme = "ivy",
+                },
                 git_branches = {
                     theme = "dropdown",
                     previewer = false,
@@ -83,6 +89,8 @@ return {
         -- Set keymaps
         vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Telescope registers" })
         -- vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Git Commits" })
+        vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_stash<cr>", { desc = "Git Stash" })
+        vim.keymap.set("n", "<leader>td", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
         vim.keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
         vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
         vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
