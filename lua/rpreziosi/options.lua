@@ -25,6 +25,9 @@ local function setup()
     -- Use the system clipboard by default for yank and paste
     vim.opt.clipboard = "unnamedplus"
 
+    -- Persistent undo 
+    vim.opt.undofile = true
+
     -- Shortcuts for quickfix navigation
     vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>', { desc = 'Next quickfix item' })
     vim.keymap.set('n', '<C-p>', '<cmd>cprev<CR>', { desc = 'Previous quickfix item' })

@@ -21,6 +21,7 @@ return {
   require("rpreziosi.lazy.avante"),
   require("rpreziosi.lazy.surround"),
   require("rpreziosi.lazy.flash"),
+  require("rpreziosi.lazy.undotree"),
 }
 
 
