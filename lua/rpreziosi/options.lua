@@ -1,6 +1,7 @@
 -- Set vim options
 local function setup()
-    vim.g.mapleader = " " -- Set leader key before Lazy
+    -- Set leader key to space
+    vim.g.mapleader = " "
 
     -- Basic editor settings
     vim.opt.number = true
@@ -25,7 +26,7 @@ local function setup()
     -- Use the system clipboard by default for yank and paste
     vim.opt.clipboard = "unnamedplus"
 
-    -- Persistent undo history 
+    -- Persistent undo history
     vim.opt.undofile = true
 
     -- Shortcuts for quickfix navigation
@@ -38,13 +39,19 @@ local function setup()
     -- Ensure ESC works normally no remap
     vim.keymap.set("i", "<Esc>", "<Esc>", { noremap = true, silent = true })
 
-    -- Copy filename to cliboard
+    -- Copy filename to cliboard (Example: "EndAssignment.flow-meta.xml" -> "EndAssignment")
     vim.keymap.set("n", "<leader>cn", function()
-        local filename = vim.fn.expand("%:t") -- e.g., "EndAssignment.flow-meta.xml"
-        local base = filename:match("^[^%.]+") -- extract before first dot
+        local filename = vim.fn.expand("%:t")
+        local base = filename:match("^[^%.]+")
         vim.fn.setreg("+", base)
         print("Copied to clipboard: " .. base)
     end, { desc = "Copy filename in the clipboard" })
+
+    -- Additional buffer management shortcuts
+    vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
+    vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+    vim.keymap.set("n", "<leader>bs", "<cmd>w<CR>", { desc = "Save buffer" })
+    vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete buffer" })
 end
 
 return { setup = setup }

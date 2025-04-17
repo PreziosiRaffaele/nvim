@@ -6,48 +6,56 @@ return {
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         -- Enable LSP capabilities for autocompletion
         local capabilities = cmp_nvim_lsp.default_capabilities()
+
         -- Apex Language Server configuration
         lspconfig.apex_ls.setup({
-            cmd = { "apex-jorje-lsp" },                                    -- Path to the Apex Language Server executable
-            filetypes = { "apex", "soql", "trigger" },                     -- Filetypes to associate with the server
-            root_dir = lspconfig.util.root_pattern(".git", "sfdx-project.json"), -- Root directory
-            settings = {},                                                 -- Additional settings if needed
-            apex_enable_semantic_errors = false,                           -- Whether to allow Apex Language Server to surface semantic errors
-            apex_enable_completion_statistics = false,                     -- Whether to allow Apex Language Server to collect telemetry on code completion usage
-            capabilities = capabilities,                                   -- Add capabilities for autocompletion
+            cmd = { "apex-jorje-lsp" },
+            filetypes = { "apex", "soql", "trigger" },
+            root_dir = lspconfig.util.root_pattern(".git", "sfdx-project.json"),
+            settings = {},
+            apex_enable_semantic_errors = false,
+            apex_enable_completion_statistics = false,
+            capabilities = capabilities,
         })
+
         -- Javascript/Typescript Language Server configuration
         lspconfig.ts_ls.setup({
-            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }, -- Filetypes
-            root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"), -- Root directory
-            capabilities = capabilities,                                                -- Add capabilities for autocompletion
+            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+            root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+            capabilities = capabilities,
         })
+
         -- EsLint Language Server configuration
         lspconfig.eslint.setup({
-            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },                        -- Filetypes
-            root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json", "package.json", ".git"), -- Root directory
-            capabilities = capabilities,                                                                             -- Add capabilities for autocompletion
+            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+            root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json"),
+            capabilities = capabilities,
         })
+
         -- HTML Language Server configuration
         lspconfig.html.setup({
-            filetypes = { "html" }, -- Filetypes
-            capabilities = capabilities, -- Add capabilities for autocompletion
+            filetypes = { "html" },
+            capabilities = capabilities,
         })
+
         -- LUA Language Server configuration
         lspconfig.lua_ls.setup {
-            capabilities = capabilities, -- Add capabilities for autocompletion
-            filetypes = { "lua" }, -- Filetypes
+            capabilities = capabilities,
+            filetypes = { "lua" },
         }
+
         -- CSS Language Server configuration
         lspconfig.cssls.setup({
-            filetypes = { "css", "scss", "less" }, -- Filetypes
-            capabilities = capabilities,     -- Add capabilities for autocompletion
+            filetypes = { "css", "scss", "less" },
+            capabilities = capabilities,
         })
+
         -- JSON Language Server configuration
         lspconfig.jsonls.setup({
-            filetypes = { "json", "jsonc" }, -- Filetypes
-            capabilities = capabilities, -- Add capabilities for autocompletion
+            filetypes = { "json", "jsonc" },
+            capabilities = capabilities,
         })
+
         -- General LSP keybindings
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
