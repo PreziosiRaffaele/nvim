@@ -22,6 +22,7 @@ return {
   require("rpreziosi.lazy.surround"),
   require("rpreziosi.lazy.flash"),
   require("rpreziosi.lazy.undotree"),
+  require("rpreziosi.lazy.githubThemes"),
 }
 
 

@@ -97,6 +97,7 @@ return {
         vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
         vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
         vim.keymap.set("n", "<leader>gm", "<cmd>Telescope git_branches<cr>", { desc = "Git branches" })
+        vim.keymap.set("n", "<leader>ft", "<cmd>Telescope colorscheme<cr>", { desc = "Color scheme" })
         vim.keymap.set("n", "<leader>faf", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
             { desc = "Find all files" })
         vim.keymap.set("n", "<leader>fn", function()
