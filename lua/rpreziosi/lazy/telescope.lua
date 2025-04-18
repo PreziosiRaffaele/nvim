@@ -28,7 +28,7 @@ return {
                     ignore_current_buffer = true,
                     mappings = {
                         i = {
-                            ["<C-d>"] = require('telescope.actions').delete_buffer,
+                            ["<C-x>"] = require('telescope.actions').delete_buffer,
                         },
                     },
                 },
