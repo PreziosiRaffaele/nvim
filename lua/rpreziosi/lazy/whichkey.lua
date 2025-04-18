@@ -3,11 +3,15 @@ return {
     event = "VeryLazy",
     opts_extend = { "spec" },
     opts = {
+        icons = {
+            mappings = false
+        },
         spec = {
+            -- { "<leader>s", group = "Salesforce", icon = { icon = "󰅟", hl = "", color = "blue" } },
             { "<leader>gs", group = "Git Stash" },
-            { "<leader>g", group = "Git"},
-            { "<leader>s", group = "Salesforce"},
-            { "<leader>a", group = "Copilot"}
+            { "<leader>g",  group = "Git" },
+            { "<leader>s",  group = "Salesforce" },
+            { "<leader>a",  group = "Avante" },
         },
     },
     keys = {
