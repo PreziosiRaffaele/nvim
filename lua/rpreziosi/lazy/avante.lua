@@ -7,23 +7,24 @@ return {
         copilot = {
             endpoint = 'https://api.githubcopilot.com/',
             model = 'claude-3.7-sonnet',
-            proxy = nil,            -- [protocol://]host[:port] Use this proxy
-            allow_insecure = false, -- Do not allow insecure server connections
-            timeout = 30000,        -- Timeout in milliseconds
+            proxy = nil,
+            allow_insecure = false,
+            timeout = 30000,
             temperature = 0.1,
-            max_tokens = 20000,     -- kinda creative
+            max_tokens = 20000,
         },
         openai = {
             endpoint = "https://api.openai.com/v1",
-            model = "o3-mini", -- your desired model 
-            timeout = 30000,  -- Timeout in milliseconds, increase this for reasoning models
+            model = "o3-2025-04-16",
+            timeout = 60000,
             temperature = 0,
-            reasoning_effort = 'high'
+            reasoning_effort = 'high',
+            disable_tools = true,
         },
         claude = {
             endpoint = "https://api.anthropic.com",
             model = "claude-3-7-sonnet-20250219",
-            timeout = 30000, -- Timeout in milliseconds
+            timeout = 30000,
             temperature = 0,
             max_tokens = 10000,
             disable_tools = true,
@@ -34,7 +35,7 @@ return {
             second_provider = "openai",
             prompt =
             "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
-            timeout = 90000, -- Timeout in milliseconds
+            timeout = 90000,
         },
         behaviour = {
             auto_suggestions = false, -- Experimental stage
@@ -48,7 +49,6 @@ return {
             enable_claude_text_editor_tool_mode = true, -- Whether to enable Claude Text Editor Tool Mode.
             use_cwd_as_project_root = true
         },
-
         vendors = {
             copilot_gpt4o = {
                 __inherited_from = "copilot",

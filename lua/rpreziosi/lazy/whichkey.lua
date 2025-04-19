@@ -9,6 +9,7 @@ return {
         spec = {
             -- { "<leader>s", group = "Salesforce", icon = { icon = "󰅟", hl = "", color = "blue" } },
             { "<leader>gs", group = "Git Stash" },
+            { "<leader>gr", group = "Git Restore/Reset" },
             { "<leader>g",  group = "Git" },
             { "<leader>s",  group = "Salesforce" },
             { "<leader>a",  group = "Avante" },

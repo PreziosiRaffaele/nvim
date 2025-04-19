@@ -10,17 +10,7 @@ return {
     config = function()
         require("telescope").setup({
             pickers = {
-                find_files = {
-                    theme = "ivy",
-                },
-                live_grep = {
-                    theme = "ivy",
-                },
-                grep_string = {
-                    theme = "ivy",
-                },
                 git_commits = {
-                    theme = "ivy",
                     git_command = { "git", "log", "--pretty=format:%h %s (%an) (%cr)" },
                 },
                 buffers = {
@@ -33,17 +23,9 @@ return {
                     },
                 },
                 git_bcommits = {
-                    theme = "ivy",
                     git_command = { "git", "log", "--pretty=format:%h %s (%an) (%cr)" },
                 },
-                git_status = {
-                    theme = "ivy",
-                },
-                help_tags = {
-                    theme = "ivy",
-                },
                 git_stash = {
-                    theme = "ivy",
                     mappings = {
                         i = {
                             ["<cr>"] = function(prompt_bufnr)
@@ -114,9 +96,6 @@ return {
                             end,
                         },
                     },
-                },
-                diagnostics = {
-                    theme = "ivy",
                 },
                 git_branches = {
                     theme = "dropdown",

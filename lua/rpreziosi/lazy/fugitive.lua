@@ -22,7 +22,7 @@ return {
                 end
             end)
         end, { desc = "Git stash with message" })
-        vim.keymap.set('n', '<leader>ra', function()
+        vim.keymap.set('n', '<leader>gra', function()
             vim.ui.select({ 'Yes', 'No' }, {
                 prompt = 'Are you sure you want to restore all files?',
             }, function(choice)
@@ -31,7 +31,7 @@ return {
                 end
             end)
         end, { desc = "Git restore all (with confirmation)" })
-        vim.keymap.set('n', '<leader>rf', function()
+        vim.keymap.set('n', '<leader>grf', function()
             vim.ui.select({ 'Yes', 'No' }, {
                 prompt = 'Are you sure you want to restore the current file?',
             }, function(choice)
