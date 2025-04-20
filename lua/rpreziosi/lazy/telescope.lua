@@ -11,11 +11,12 @@ return {
         require("telescope").setup({
             pickers = {
                 git_commits = {
-                    git_command = { "git", "log", "--pretty=format:%h %s (%an) (%cr)" },
+                    layout_strategy = "vertical",
+                    git_command = {"git","log","--pretty=format:%h %s, %an, %ar","--no-merges"}
                 },
                 buffers = {
+                    layout_strategy = "vertical",
                     sort_lastused = true,
-                    ignore_current_buffer = true,
                     mappings = {
                         i = {
                             ["<C-x>"] = require('telescope.actions').delete_buffer,
@@ -25,7 +26,27 @@ return {
                 git_bcommits = {
                     git_command = { "git", "log", "--pretty=format:%h %s (%an) (%cr)" },
                 },
+                find_files = {
+                    layout_strategy = "vertical",
+                },
+                live_grep = {
+                    layout_strategy = "vertical",
+                },
+                colorscheme = {
+                    theme = "dropdown",
+                    previewer = false,
+                },
+                git_status = {
+                    layout_strategy = "vertical",
+                },
+                help_tags = {
+                    layout_strategy = "vertical",
+                },
+                diagnostics = {
+                    layout_strategy = "vertical",
+                },
                 git_stash = {
+                    layout_strategy = "vertical",
                     mappings = {
                         i = {
                             ["<cr>"] = function(prompt_bufnr)
@@ -137,7 +158,7 @@ return {
         require("telescope").load_extension("fzf")
         -- Set keymaps
         vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Telescope registers" })
-        -- vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Git Commits" })
+        vim.keymap.set("n", "<leader>gl", "<cmd>Telescope git_commits<cr>", { desc = "Git Logs" })
         vim.keymap.set("n", "<leader>gsl", "<cmd>Telescope git_stash<cr>", { desc = "Git Stash List" })
         vim.keymap.set("n", "<leader>td", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
         vim.keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
@@ -145,9 +166,9 @@ return {
         vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
         vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
         vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
-        vim.keymap.set("n", "<leader>gm", "<cmd>Telescope git_branches<cr>", { desc = "Git branches" })
-        vim.keymap.set("n", "<leader>ft", "<cmd>Telescope colorscheme<cr>", { desc = "Color scheme" })
-        vim.keymap.set("n", "<leader>faf", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
+        vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Git branches" })
+        vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", { desc = "Color scheme" })
+        vim.keymap.set("n", "<leader>fa", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
             { desc = "Find all files" })
         vim.keymap.set("n", "<leader>fn", function()
             require("telescope.builtin").find_files {
