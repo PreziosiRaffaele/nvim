@@ -32,30 +32,30 @@ return {
 
     -- Set keymaps
     local Sf = require('sf')
-    vim.keymap.set("n", "<leader><leader>", Sf.toggle_term, { desc = "terminal toggle" })
-    vim.keymap.set("n", "<leader>ss", Sf.set_target_org, { desc = "set target_org" })
-    vim.keymap.set("n", "<leader>sd", Sf.diff_in_target_org, { desc = "diff in target_org" })
-    vim.keymap.set("n", "<leader>sD", Sf.diff_in_org, { desc = "diff in org..." })
-    vim.keymap.set("n", "<leader>sp", Sf.save_and_push, { desc = "Deploy metadata to the org" })
-    vim.keymap.set("n", "<leader>sfp",
+    vim.keymap.set("n", "<leader><leader>", Sf.toggle_term, { desc = "Terminal toggle" })
+    vim.keymap.set("n", "<leader>ss", Sf.set_target_org, { desc = "Set target_org" })
+    vim.keymap.set("n", "<leader>sd", Sf.diff_in_target_org, { desc = "Diff in target_org" })
+    vim.keymap.set("n", "<leader>sD", Sf.diff_in_org, { desc = "Diff in org..." })
+    vim.keymap.set("n", "<leader>sp", Sf.save_and_push, { desc = "Push current file" })
+    vim.keymap.set("n", "<leader>sP",
       function() require('sf').run('sf project deploy start --ignore-conflicts -d ' .. vim.fn.expand('%:p')) end,
-      { desc = "push current file ignore conflicts" })
-    vim.keymap.set("n", "<leader>sfr",
+      { desc = "Push current file (Ignore Conflicts)" })
+    vim.keymap.set("n", "<leader>sR",
       function() require('sf').run('sf project retrieve start --ignore-conflicts -d ' .. vim.fn.expand('%:p')) end,
-      { desc = "retrieve current file ignore conflicts" })
+      { desc = "Retrieve current file (Ignore Conflicts)" })
 
-    vim.keymap.set("n", "<leader>sr", Sf.retrieve, { desc = "retrieve current file" })
-    vim.keymap.set("n", "<leader>so", Sf.org_open, { desc = "open org" })
+    vim.keymap.set("n", "<leader>sr", Sf.retrieve, { desc = "Retrieve current file" })
+    vim.keymap.set("n", "<leader>so", Sf.org_open, { desc = "Open org" })
     -- Test related keymaps
-    vim.keymap.set("n", "<leader>ta", Sf.run_all_tests_in_this_file, { desc = "run all tests in this file" })
-    vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "run all test in this file with coverage" })
-    vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "test this under cursor" })
-    vim.keymap.set("n", "<leader>tT", Sf.run_current_test_with_coverage, { desc = "test this under cursor with coverage info" })
+    vim.keymap.set("n", "<leader>ta", Sf.run_all_tests_in_this_file, { desc = "Run all tests in this file" })
+    vim.keymap.set("n", "<leader>tA", Sf.run_all_tests_in_this_file_with_coverage, { desc = "Run all test in this file with coverage" })
+    vim.keymap.set("n", "<leader>tt", Sf.run_current_test, { desc = "Test this under cursor" })
+    vim.keymap.set("n", "<leader>tT", Sf.run_current_test_with_coverage, { desc = "Test this under cursor with coverage info" })
     vim.keymap.set('n', '<leader>sg', function() require('sf').run('sf meta open -f ' .. vim.fn.expand('%:p')) end,
-      { noremap = true, silent = true, desc = 'run meta open with current file' })
+      { noremap = true, silent = true, desc = 'Open current file in UI' })
     vim.keymap.set('n', '<leader>se', function() require('sf').run('sf apex run -f ' .. vim.fn.expand('%:p')) end,
-      { noremap = true, silent = true, desc = 'execute apex script' })
-    vim.keymap.set('n', '<leader>sl', Sf.pull_log, { desc = 'pull logs' })
+      { noremap = true, silent = true, desc = 'Execute Apex' })
+    vim.keymap.set('n', '<leader>sl', Sf.pull_log, { desc = 'Pull logs' })
     --PMD issues
     -- vim.keymap.set('n', '<leader>si',
     --   function() require('sf').run('sf scanner run -f table --pmdconfig ./rules/RandstadPMDRules.xml -t ' ..
