@@ -12,7 +12,7 @@ return {
             pickers = {
                 git_commits = {
                     layout_strategy = "vertical",
-                    git_command = {"git","log","--pretty=format:%h %s, %an, %ar","--no-merges"}
+                    git_command = {"git","log","--pretty=reference","--no-merges"}
                 },
                 buffers = {
                     layout_strategy = "vertical",

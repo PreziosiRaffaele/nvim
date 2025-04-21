@@ -23,6 +23,7 @@ return {
   require("rpreziosi.lazy.flash"),
   require("rpreziosi.lazy.undotree"),
   require("rpreziosi.lazy.githubThemes"),
+  require("rpreziosi.lazy.miniai")
 }
 
 
