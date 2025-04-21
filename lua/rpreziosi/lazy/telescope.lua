@@ -24,7 +24,7 @@ return {
                     },
                 },
                 git_bcommits = {
-                    git_command = { "git", "log", "--pretty=format:%h %s (%an) (%cr)" },
+                    git_command = {"git", "log", "--pretty=reference", "--no-merges"},
                 },
                 find_files = {
                     layout_strategy = "vertical",
@@ -164,7 +164,7 @@ return {
         vim.keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
         vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
         vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
-        vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
+        vim.keymap.set("n", "<leader>bl", "<cmd>Telescope buffers<cr>", { desc = "List buffers" })
         vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
         vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Git branches" })
         vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", { desc = "Color scheme" })

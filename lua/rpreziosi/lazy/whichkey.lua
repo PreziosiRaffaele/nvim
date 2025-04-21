@@ -13,6 +13,8 @@ return {
             { "<leader>g",  group = "Git" },
             { "<leader>s",  group = "Salesforce" },
             { "<leader>a",  group = "Avante" },
+            { "<leader>d",  group = "Diffview" },
+            { "<leader>b",  group = "Buffers" }
         },
     },
     keys = {

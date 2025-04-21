@@ -52,6 +52,7 @@ local function setup()
     vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
     vim.keymap.set("n", "<leader>bs", "<cmd>w<CR>", { desc = "Save buffer" })
     vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete buffer" })
+    vim.keymap.set("n", "<leader>bD", "<cmd>bd!<CR>", { desc = "Force delete buffer" })
 end
 
 return { setup = setup }
