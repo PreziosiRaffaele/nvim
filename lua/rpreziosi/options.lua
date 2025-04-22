@@ -39,6 +39,9 @@ local function setup()
     -- Ensure ESC works normally no remap
     vim.keymap.set("i", "<Esc>", "<Esc>", { noremap = true, silent = true })
 
+    -- Open Alpha dashboard
+    vim.keymap.set("n", "<leader>q", "<Esc><cmd>Alpha<CR>", { desc = "Open Alpha dashboard", noremap = true, silent = true })
+
     -- Copy filename to cliboard (Example: "EndAssignment.flow-meta.xml" -> "EndAssignment")
     vim.keymap.set("n", "<leader>cn", function()
         local filename = vim.fn.expand("%:t")
