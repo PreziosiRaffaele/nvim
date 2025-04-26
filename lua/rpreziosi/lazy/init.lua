@@ -1,6 +1,5 @@
 return {
     -- Import plugin configurations
-    require("rpreziosi.lazy.kanagawa"),
     require("rpreziosi.lazy.treesitter"),
     require("rpreziosi.lazy.telescope"),
     require("rpreziosi.lazy.gitsigns"),
@@ -21,6 +20,6 @@ return {
     require("rpreziosi.lazy.avante"),
     require("rpreziosi.lazy.flash"),
     require("rpreziosi.lazy.undotree"),
-    require("rpreziosi.lazy.githubThemes"),
+    require("rpreziosi.lazy.themes"),
     require("rpreziosi.lazy.mini"),
 }
