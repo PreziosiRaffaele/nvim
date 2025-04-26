@@ -19,10 +19,8 @@ return {
     require("rpreziosi.lazy.comment"),
     require("rpreziosi.lazy.nvimlint"),
     require("rpreziosi.lazy.avante"),
-    require("rpreziosi.lazy.surround"),
     require("rpreziosi.lazy.flash"),
     require("rpreziosi.lazy.undotree"),
     require("rpreziosi.lazy.githubThemes"),
-    require("rpreziosi.lazy.miniai"),
-    require("rpreziosi.lazy.alpha")
+    require("rpreziosi.lazy.mini"),
 }

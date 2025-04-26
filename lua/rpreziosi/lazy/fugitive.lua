@@ -9,6 +9,30 @@ return {
         vim.keymap.set('n', '<leader>gF', ':Git push --force<CR>', { desc = "Git force push" })
         vim.keymap.set('n', '<leader>gA', ':Git commit --amend<CR>', { desc = "Git amend commit" })
         vim.keymap.set('n', '<leader>gC', ':Git checkout -b ', { desc = "Create new branch" }) -- Type new branch name
+        -- Rename current branch
+        vim.keymap.set('n', '<leader>gR', function()
+            -- Get current branch name
+            local current_branch = vim.fn.trim(vim.fn.system("git branch --show-current"))
+            if vim.v.shell_error ~= 0 then
+                vim.notify("Couldn't detect current branch", vim.log.levels.ERROR)
+                return
+            end
+
+            vim.ui.input({
+                prompt = 'Rename branch "' .. current_branch .. '" to: ',
+                default = current_branch,
+            }, function(new_name)
+                if new_name and new_name ~= "" and new_name ~= current_branch then
+                    local cmd = string.format('Git branch -m "%s" "%s"', current_branch, new_name)
+                    vim.cmd(cmd)
+                    vim.notify(string.format('Branch renamed from "%s" to "%s"', current_branch, new_name),
+                        vim.log.levels.INFO)
+                elseif new_name == current_branch then
+                    vim.notify("Branch name unchanged", vim.log.levels.INFO)
+                end
+            end)
+        end, { desc = "Git rename current branch" })
+
         vim.keymap.set('n', '<leader>gsc', function()
             vim.ui.input({
                 prompt = 'Stash message: ',

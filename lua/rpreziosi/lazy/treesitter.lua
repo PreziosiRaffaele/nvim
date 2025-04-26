@@ -14,6 +14,22 @@ return {
                 enable = true,
                 additional_vim_regex_highlighting = false,
             },
-       })
+            textobjects = {
+                select = {
+                    enable = true,
+                    lookahead = true,
+                },
+
+                move = {
+                    enable = true,
+                    set_jumps = true, -- whether to set jumps in the jumplist
+                                 },
+
+                swap = {
+                    enable = true,
+                 
+                },
+            },
+        })
     end,
 }

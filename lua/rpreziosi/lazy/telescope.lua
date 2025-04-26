@@ -32,6 +32,9 @@ return {
                 live_grep = {
                     layout_strategy = "vertical",
                 },
+                marks = {
+                    layout_strategy = "vertical",
+                },
                 colorscheme = {
                     theme = "dropdown",
                     previewer = false,
@@ -159,6 +162,7 @@ return {
         -- Set keymaps
         vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Telescope registers" })
         vim.keymap.set("n", "<leader>gl", "<cmd>Telescope git_commits<cr>", { desc = "Git Logs" })
+        vim.keymap.set("n", "<leader>ml", "<cmd>Telescope marks<cr>", { desc = "Marks List" })
         vim.keymap.set("n", "<leader>gsl", "<cmd>Telescope git_stash<cr>", { desc = "Git Stash List" })
         vim.keymap.set("n", "<leader>td", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
         vim.keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Git Status" })
