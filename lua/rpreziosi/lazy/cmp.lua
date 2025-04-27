@@ -11,7 +11,6 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -23,7 +22,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-a>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
@@ -37,7 +36,6 @@ return {
         documentation = cmp.config.window.bordered(),
       },
     })
-
     -- Use buffer source for `/` and `?`
     cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
