@@ -78,5 +78,29 @@ return {
     -- Add keymap for the commit message search
     vim.api.nvim_set_keymap("n", "<leader>dm", ":DiffviewFileHistoryByMessage<CR>",
       { desc = "Search commits by message" })
+
+    -- Custom function to view changes for a specific commit by SHA
+    vim.api.nvim_create_user_command('DiffviewFileHistoryBySHA', function()
+      vim.ui.input({
+        prompt = "Enter commit SHA: ",
+      }, function(input)
+        if input and input ~= "" then
+          -- Clean the input to ensure it contains only valid SHA characters
+          local sha = input:gsub("[^0-9a-fA-F]", "")
+          if sha ~= "" then
+            local cmd = string.format(":DiffviewFileHistory --range=%s^!<CR>", sha)
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, false, true), "n", true)
+            -- Notify user about the SHA being viewed
+            vim.notify("Showing changes for commit: " .. sha, vim.log.levels.INFO)
+          else
+            vim.notify("Invalid SHA format provided", vim.log.levels.ERROR)
+          end
+        end
+      end)
+    end, { desc = "View commit by SHA" })
+
+    -- Add keymap for the commit SHA search
+    vim.api.nvim_set_keymap("n", "<leader>dS", ":DiffviewFileHistoryBySHA<CR>",
+      { desc = "View commit by SHA" })
   end,
 }
