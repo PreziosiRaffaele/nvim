@@ -53,6 +53,14 @@ local function setup()
     vim.keymap.set("n", "<leader>bs", "<cmd>w<CR>", { desc = "Save buffer" })
     vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete buffer" })
     vim.keymap.set("n", "<leader>bD", "<cmd>bd!<CR>", { desc = "Force delete buffer" })
+
+    -- Delete all buffers with confirmation
+    vim.keymap.set("n", "<leader>bA", function()
+        local choice = vim.fn.confirm("Delete all buffers (including unsaved)?", "&Yes\n&No", 2)
+        if choice == 1 then
+            vim.cmd("%bd!")
+        end
+    end, { desc = "Delete all buffers with confirmation" })
 end
 
 return { setup = setup }
