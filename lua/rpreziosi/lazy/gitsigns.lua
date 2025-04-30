@@ -48,7 +48,8 @@ return {
                 style = 'minimal',
                 relative = 'cursor',
                 row = 0,
-                col = 1
+                col = 1,
+                border = 'double',
             },
             on_attach = function(bufnr)
                 local gs = package.loaded.gitsigns
@@ -84,7 +85,7 @@ return {
                 map('n', '<leader>bS', gs.stage_buffer, { desc = "Stage buffer" })
                 map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "Undo stage hunk" })
                 map('n', '<leader>bR', gs.reset_buffer, { desc = "Reset buffer" })
-                map('n', '<leader>hp', gs.preview_hunk, { desc = "Preview hunk" })
+                map('n', '<leader>hp', gs.preview_hunk_inline, { desc = "Preview hunk" })
                 map('n', '<leader>hb', function() gs.blame_line { full = true } end, { desc = "Blame line" })
                 map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "Toggle line blame" })
                 map('n', '<leader>hd', function()
