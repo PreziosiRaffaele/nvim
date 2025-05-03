@@ -23,7 +23,5 @@ require("lazy").setup({
 
 -- Setup custom commands and functionality
 require("rpreziosi.core.gitlab").setup()
--- Load apex_coverage module and register commands
-require("rpreziosi.core.apex_coverage").setup()
 -- Load prettier config
 require("rpreziosi.core.prettier").config()
