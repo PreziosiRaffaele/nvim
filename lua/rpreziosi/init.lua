@@ -11,12 +11,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Setup options first
+require("rpreziosi.options").setup()
+
 require("lazy").setup({
-    spec = "rpreziosi.lazy",
+    spec = "rpreziosi.plugins",
     change_detection = { notify = false }
 })
 
 -- Setup custom commands and functionality
-require("rpreziosi.gitlab").setup()
+require("rpreziosi.core.gitlab").setup()
 -- Load apex_coverage module and register commands
-require("rpreziosi.apex_coverage").setup()
+require("rpreziosi.core.apex_coverage").setup()
+-- Load prettier config
+require("rpreziosi.core.prettier").config()
