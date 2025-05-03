@@ -9,9 +9,9 @@ return {
             model = 'gemini-2.5-pro',
             proxy = nil,
             allow_insecure = false,
-            timeout = 30000,
+            timeout = 60000,
             temperature = 0.1,
-            max_tokens = 20000,
+            max_tokens = 30000,
         },
         openai = {
             endpoint = "https://api.openai.com/v1",

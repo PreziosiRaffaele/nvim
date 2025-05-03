@@ -12,10 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup options first
-require("rpreziosi.options").setup()
+require("rpreziosi.config.options").setup()
+-- Setup keymaps
+require("rpreziosi.config.keymaps").setup()
 
 require("lazy").setup({
-    spec = "rpreziosi.plugins",
+    spec = "rpreziosi.plugins", -- Updated spec name
     change_detection = { notify = false }
 })
 
