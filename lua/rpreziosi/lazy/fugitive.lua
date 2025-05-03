@@ -6,7 +6,15 @@ return {
         vim.keymap.set('n', '<leader>gp', ':Git pull --quiet<CR>', { desc = "Git pull" })
         vim.keymap.set('n', '<leader>gf', ':Git fetch <CR>', { desc = "Git fetch" })
         vim.keymap.set('n', '<leader>grs', ':Git reset --soft HEAD~1<CR>', { desc = "Git reset soft (keep staged)" })
-        vim.keymap.set('n', '<leader>gF', ':Git push --force<CR>', { desc = "Git force push" })
+        vim.keymap.set('n', '<leader>gF', function()
+            vim.ui.select({ 'Yes', 'No' }, {
+                prompt = 'Are you sure you want to force push?',
+            }, function(choice)
+                if choice == 'Yes' then
+                    vim.cmd('Git push --force')
+                end
+            end)
+        end, { desc = "Git force push (with confirmation)" })
         vim.keymap.set('n', '<leader>gA', ':Git commit --amend<CR>', { desc = "Git amend commit" })
         vim.keymap.set('n', '<leader>gC', ':Git checkout -b ', { desc = "Create new branch" }) -- Type new branch name
         -- Rename current branch

@@ -6,7 +6,7 @@ return {
         provider = "copilot",
         copilot = {
             endpoint = 'https://api.githubcopilot.com/',
-            model = 'claude-3.7-sonnet',
+            model = 'gemini-2.5-pro',
             proxy = nil,
             allow_insecure = false,
             timeout = 30000,
@@ -73,20 +73,20 @@ return {
             enable_token_counting = false,               -- Whether to enable token counting. Default to true.
             enable_cursor_planning_mode = false,        -- Whether to enable Cursor Planning Mode. Default to false.
             enable_claude_text_editor_tool_mode = true, -- Whether to enable Claude Text Editor Tool Mode.
-            use_cwd_as_project_root = true
+            -- use_cwd_as_project_root = true
         },
         vendors = {
             copilot_gpt4o = {
                 __inherited_from = "copilot",
                 model = "gpt-4o",
                 max_tokens = 20000,
-                disable_tools = true,
+                disable_tools = false,
             },
             copilot_claudeThought = {
                 __inherited_from = "copilot",
                 model = "claude-3.7-sonnet-thought",
                 max_tokens = 20000,
-                disable_tools = true,
+                disable_tools = false,
             },
         },
     },
