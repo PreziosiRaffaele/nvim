@@ -22,6 +22,9 @@ local function setup()
     vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete buffer" })
     vim.keymap.set("n", "<leader>bD", "<cmd>bd!<CR>", { desc = "Force delete buffer" })
 
+    -- Quit nvim
+    vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all" })
+
     -- Delete all buffers with confirmation
     vim.keymap.set("n", "<leader>bA", function()
         local choice = vim.fn.confirm("Delete all buffers (including unsaved)?", "&Yes\n&No", 2)
@@ -29,6 +32,9 @@ local function setup()
             vim.cmd("%bd!")
         end
     end, { desc = "Delete all buffers with confirmation" })
+
+    -- Clear search highlighting
+    vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
 end
 
 return { setup = setup }
