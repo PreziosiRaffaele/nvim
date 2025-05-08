@@ -1,6 +1,10 @@
 return {
     "yetone/avante.nvim",
-    event = "VeryLazy",
+    cmd = { "AvanteToggle", "AvanteAsk"},
+    keys = {
+        { "<leader>at", "<cmd>AvanteToggle<cr>", desc = "Avante" },
+        { "<leader>aa", "<cmd>AvanteAsk<cr>", desc = "Avante Ask" },
+    },
     version = false, -- Never set this value to "*"! Never!
     opts = {
         provider = "copilot",
@@ -89,8 +93,6 @@ return {
                 disable_tools = false,
             },
         },
-    },
-    keys = {
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
