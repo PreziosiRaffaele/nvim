@@ -17,7 +17,7 @@ require('rpreziosi.config.options').setup()
 require('rpreziosi.config.keymaps').setup()
 
 require('lazy').setup({
-    spec = 'rpreziosi.plugins', 
+    spec = 'rpreziosi.plugins',
     change_detection = { notify = false },
     rocks = { enabled = false }, -- Disable luarocks
 })

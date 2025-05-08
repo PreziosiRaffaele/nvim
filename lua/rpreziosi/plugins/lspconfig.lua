@@ -1,11 +1,11 @@
 return {
     "neovim/nvim-lspconfig",
-    dependencies = { "hrsh7th/cmp-nvim-lsp" },
+    dependencies = { "saghen/blink.cmp" },
     config = function()
         local lspconfig = require("lspconfig")
-        local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local blink_cmp = require("blink.cmp")
         -- Enable LSP capabilities for autocompletion
-        local capabilities = cmp_nvim_lsp.default_capabilities()
+        local capabilities = blink_cmp.get_lsp_capabilities()
 
         -- Apex Language Server configuration
         lspconfig.apex_ls.setup({
