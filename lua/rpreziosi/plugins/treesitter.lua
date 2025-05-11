@@ -27,7 +27,7 @@ return {
 
                 swap = {
                     enable = true,
-                 
+
                 },
             },
         })

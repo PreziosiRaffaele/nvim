@@ -25,6 +25,9 @@ local function setup()
     -- Quit nvim
     vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all" })
 
+    -- Go back to normal mode
+    vim.keymap.set("i", "jj", "<Esc>", { desc = "Go back to normal mode" })
+
     -- Delete all buffers with confirmation
     vim.keymap.set("n", "<leader>bA", function()
         local choice = vim.fn.confirm("Delete all buffers (including unsaved)?", "&Yes\n&No", 2)
