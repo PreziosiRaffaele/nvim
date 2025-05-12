@@ -1,10 +1,9 @@
 return {
-    ft = "plantuml",
-    "weirongxu/plantuml-previewer.vim",
+    cmd = { 'PlantumlOpen' },
+    'weirongxu/plantuml-previewer.vim',
     dependencies = {
-        "tyru/open-browser.vim", -- Opens preview in browser
-        "aklt/plantuml-syntax", -- Syntax highlighting for PlantUML
+        'tyru/open-browser.vim', -- Opens preview in browser
+        'aklt/plantuml-syntax',  -- Syntax highlighting for PlantUML
     },
-    config = function()
-    end
+    config = function() end,
 }
