@@ -60,6 +60,10 @@ return {
                 git_bcommits = {
                     git_command = {"git", "log", "--pretty=reference", "--no-merges"},
                 },
+                lsp_document_symbols = {
+                    layout_strategy = "vertical",
+                    symbol_width = 105,
+                },
                 find_files = {
                     layout_strategy = "vertical",
                 },
@@ -194,6 +198,7 @@ return {
         })
         require("telescope").load_extension("fzf")
         -- Set keymaps
+        vim.keymap.set("n", "<leader>fds", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document symbols" })
         vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Telescope registers" })
         vim.keymap.set("n", "<leader>gl", "<cmd>Telescope git_commits<cr>", { desc = "Git Logs" })
         vim.keymap.set("n", "<leader>ml", "<cmd>Telescope marks<cr>", { desc = "Marks List" })

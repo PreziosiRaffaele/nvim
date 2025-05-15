@@ -40,13 +40,13 @@ return {
 
                     -- Module mappings. Use `''` (empty string) to disable one.
                     mappings = {
-                        add = 'za', -- Add surrounding in Normal and Visual modes
-                        delete = 'zd', -- Delete surrounding
-                        find = 'zf', -- Find surrounding (to the right)
-                        find_left = 'zF', -- Find surrounding (to the left)
-                        highlight = 'zh', -- Highlight surrounding
-                        replace = 'zr', -- Replace surrounding
-                        update_n_lines = 'zn', -- Update `n_lines`
+                        add = 'ys',            -- Add surrounding in Normal and Visual modes
+                        delete = 'yd',         -- Delete surrounding
+                        find = 'yf',           -- Find surrounding (to the right)
+                        find_left = 'yF',      -- Find surrounding (to the left)
+                        highlight = 'yh',      -- Highlight surrounding
+                        replace = 'yr',        -- Replace surrounding
+                        update_n_lines = 'yn', -- Update `n_lines`
 
                         suffix_last = 'l', -- Suffix to search with "prev" method
                         suffix_next = 'n', -- Suffix to search with "next" method
