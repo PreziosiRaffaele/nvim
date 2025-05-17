@@ -41,12 +41,12 @@ return {
                     -- Module mappings. Use `''` (empty string) to disable one.
                     mappings = {
                         add = 'ys',            -- Add surrounding in Normal and Visual modes
-                        delete = 'yd',         -- Delete surrounding
-                        find = 'yf',           -- Find surrounding (to the right)
-                        find_left = 'yF',      -- Find surrounding (to the left)
-                        highlight = 'yh',      -- Highlight surrounding
-                        replace = 'yr',        -- Replace surrounding
-                        update_n_lines = 'yn', -- Update `n_lines`
+                        delete = 'ysd',         -- Delete surrounding
+                        find = 'ysf',           -- Find surrounding (to the right)
+                        find_left = 'ysF',      -- Find surrounding (to the left)
+                        highlight = 'ysh',      -- Highlight surrounding
+                        replace = 'ysr',        -- Replace surrounding
+                        update_n_lines = 'ysn', -- Update `n_lines`
 
                         suffix_last = 'l', -- Suffix to search with "prev" method
                         suffix_next = 'n', -- Suffix to search with "next" method
