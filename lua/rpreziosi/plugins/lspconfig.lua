@@ -28,7 +28,7 @@ return {
         -- EsLint Language Server configuration
         lspconfig.eslint.setup({
             filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-            root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json"),
+            root_dir = lspconfig.util.root_pattern(".eslintrc", ".eslintrc.js", ".eslintrc.json", ".eslintrc.cjs"),
             capabilities = capabilities,
         })
 
