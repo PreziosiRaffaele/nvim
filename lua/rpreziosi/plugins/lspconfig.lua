@@ -56,6 +56,13 @@ return {
             capabilities = capabilities,
         })
 
+        -- C Language Server configuration (clangd)
+        lspconfig.clangd.setup({
+            filetypes = { "c", "cpp", "objc", "objcpp" },
+            cmd = { "clangd", "--background-index" },
+            capabilities = capabilities,
+        })
+
         -- General LSP keybindings
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
