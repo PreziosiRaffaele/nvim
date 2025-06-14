@@ -39,6 +39,9 @@ local function setup()
 
     -- Clear search highlighting
     vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
+
+    -- JIRA update custom field
+    vim.keymap.set('n', '<leader>jd', '<cmd>JiraUpdateSolutionDesign<CR>', { desc = 'Update Jira Solution Design' })
 end
 
 return { setup = setup }

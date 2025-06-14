@@ -1,0 +1,17 @@
+return {
+    'PreziosiRaffaele/jira.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('jira').setup({
+            key = { 'CITSP', 'RORT' },
+            api_version = '2',
+        })
+    end,
+    cond = function()
+        return vim.env.JIRA_API_TOKEN ~= nil
+    end,
+    keys = {
+        { '<leader>jv', ':JiraView<cr>', desc = 'View Jira issue', silent = true },
+        { '<leader>jo', ':JiraOpen<cr>', desc = 'Open Jira issue in browser', silent = true },
+    },
+}

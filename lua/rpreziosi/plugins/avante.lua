@@ -13,6 +13,10 @@ return {
                 endpoint = 'https://api.githubcopilot.com/',
                 model = 'gemini-2.5-pro',
             },
+            openai = {
+                endpoint = 'https://api.openai.com/v1',
+                model = 'o3-2025-04-16',
+            },
         },
         windows = {
             ---@type "right" | "left" | "top" | "bottom"
@@ -50,7 +54,9 @@ return {
             enable_token_counting = false, -- Whether to enable token counting. Default to true.
             enable_cursor_planning_mode = false, -- Whether to enable Cursor Planning Mode. Default to false.
             enable_claude_text_editor_tool_mode = true, -- Whether to enable Claude Text Editor Tool Mode.
-            -- use_cwd_as_project_root = true
+        },
+        tools = {
+            disabled_tools = { 'git_commit' },
         },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
