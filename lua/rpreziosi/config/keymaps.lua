@@ -24,6 +24,7 @@ local function setup()
 
     -- Quit nvim
     vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all" })
+    vim.keymap.set("n", "<leader>qQ", "<cmd>qa!<CR>", { desc = "Force quit all" })
 
     -- Go back to normal mode
     vim.keymap.set("i", "jj", "<Esc>", { desc = "Go back to normal mode" })
