@@ -1,10 +1,11 @@
 return {
-    'PreziosiRaffaele/jira.nvim',
+    'Funk66/jira.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
         require('jira').setup({
             key = { 'CITSP', 'RORT' },
             api_version = '2',
+            auth_type = 'Bearer',
         })
     end,
     cond = function()

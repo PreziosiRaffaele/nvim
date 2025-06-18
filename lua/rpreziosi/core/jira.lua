@@ -113,7 +113,6 @@ function M.setup()
             vim.notify('JIRA issue key not provided and could not be inferred from filename.', vim.log.levels.ERROR)
             return
         end
-
         M.updateJiraField(issueKey, fieldId, fieldValue)
     end, {
         nargs = 0,
