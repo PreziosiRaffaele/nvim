@@ -12,6 +12,9 @@ return {
             openai = {
                 endpoint = 'https://api.openai.com/v1',
                 model = 'o3-2025-04-16',
+                extra_request_body = {
+                    max_completion_tokens = 100000
+                },
             },
         },
         windows = {
