@@ -7,12 +7,8 @@ return {
     },
     version = false, -- Never set this value to "*"! Never!
     opts = {
-        provider = 'copilot',
+        provider = 'openai',
         providers = {
-            copilot = {
-                endpoint = 'https://api.githubcopilot.com/',
-                model = 'gemini-2.5-pro',
-            },
             openai = {
                 endpoint = 'https://api.openai.com/v1',
                 model = 'o3-2025-04-16',
@@ -70,7 +66,6 @@ return {
         --- The below dependencies are optional,
         'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
         'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
-        'zbirenbaum/copilot.lua', -- for providers='copilot'
         {
             -- support for image pasting
             'HakonHarnes/img-clip.nvim',
