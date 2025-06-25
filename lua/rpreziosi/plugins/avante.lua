@@ -6,6 +6,9 @@ return {
         { '<leader>aa', '<cmd>AvanteAsk<cr>', desc = 'Avante Ask' },
     },
     version = false, -- Never set this value to "*"! Never!
+    selector = {
+        provider = 'fzf_lua',
+    },
     opts = {
         provider = 'openai',
         providers = {
@@ -67,7 +70,7 @@ return {
         'nvim-lua/plenary.nvim',
         'MunifTanjim/nui.nvim',
         --- The below dependencies are optional,
-        'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
+        'ibhagwan/fzf-lua',
         'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
         {
             -- support for image pasting

@@ -67,5 +67,8 @@ return {
         vim.keymap.set('n', '<leader>gl', fzf.git_commits, { desc = 'Git logs' })
         vim.keymap.set('n', '<leader>glf', fzf.git_bcommits, { desc = 'Git logs (buffer)' })
         vim.keymap.set('n', '<leader>fh', fzf.help_tags, { desc = 'Help tags' })
+        vim.keymap.set('n', '<leader>bl', fzf.buffers, { desc = 'Buffers' })
+        vim.keymap.set('n', '<leader>ch', fzf.command_history, { desc = 'Command history' })
+        vim.keymap.set('n', '<leader>td', fzf.diagnostics_document, { desc = 'Diagnostics' })
     end,
 }

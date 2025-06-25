@@ -198,13 +198,8 @@ return {
         })
         require("telescope").load_extension("fzf")
         -- Set keymaps
-        vim.keymap.set("n", "<leader>fds", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Document symbols" })
-        vim.keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Telescope registers" })
-        vim.keymap.set("n", "<leader>ml", "<cmd>Telescope marks<cr>", { desc = "Marks List" })
         vim.keymap.set("n", "<leader>gsl", "<cmd>Telescope git_stash<cr>", { desc = "Git Stash List" })
-        vim.keymap.set("n", "<leader>td", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" })
         vim.keymap.set("n", "<leader>fD", custom_live_grep, { desc = "Live grep in directory" })
-        vim.keymap.set("n", "<leader>bl", "<cmd>Telescope buffers<cr>", { desc = "List buffers" })
         vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Git branches" })
         vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", { desc = "Color scheme" })
         vim.keymap.set("n", "<leader>fa", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",{ desc = "Find all files" })
