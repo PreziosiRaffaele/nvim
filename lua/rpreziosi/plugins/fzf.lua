@@ -50,6 +50,22 @@ return {
             },
         })
         local fzf = require('fzf-lua')
+
+        -- Custom function to select directory and then run live_grep
+        local function custom_live_grep()
+            local input = vim.fn.input("Enter directory to search in (leave empty for current dir): ", vim.fn.getcwd() .. '/' , "dir")
+            local opts = {}
+            if input ~= "" and vim.fn.isdirectory(input) == 1 then
+                opts.cwd = input
+            else
+                if input ~= "" then
+                    vim.notify("Invalid directory path: " .. input, vim.log.levels.WARN)
+                end
+            end
+            opts.rg_opts = '--column --line-number --no-heading --color=always --ignore-case --max-columns=4096 --hidden --no-ignore -e'
+            fzf.live_grep(opts)
+        end
+
         vim.keymap.set('n', '<leader>ff', fzf.files, { desc = 'Find files' })
 
         -- Find files in the nvim config directory
@@ -63,6 +79,7 @@ return {
         )
 
         vim.keymap.set('n', '<leader>fg', fzf.live_grep, { desc = 'Live grep' })
+        vim.keymap.set('n', '<leader>fD', custom_live_grep, { desc = 'Live grep in directory' })
         vim.keymap.set('n', '<leader>gS', fzf.git_status, { desc = 'Git status' })
         vim.keymap.set('n', '<leader>gl', fzf.git_commits, { desc = 'Git logs' })
         vim.keymap.set('n', '<leader>glf', fzf.git_bcommits, { desc = 'Git logs (buffer)' })

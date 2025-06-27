@@ -12,35 +12,7 @@ return {
         local actions = require("telescope.actions")
         local action_state = require("telescope.actions.state")
 
-        -- Custom function to select directory and then run live_grep
-        local custom_live_grep = function()
-            local opts = {}
-
-            -- Use standard input() with explicit completion function for more reliable directory completion
-            local input = vim.fn.input("Enter directory to search in (leave empty for current dir): ", vim.fn.getcwd() .. '/' , "dir")
-
-            -- Clean the input and ensure it's valid
-            if input ~= "" and vim.fn.isdirectory(input) == 1 then
-                opts.cwd = input
-                opts.prompt_title = "Live Grep in: " .. input
-            else
-                if input ~= "" then
-                    vim.notify("Invalid directory path: " .. input, vim.log.levels.WARN)
-                end
-                opts.prompt_title = "Live Grep in current directory"
-            end
-
-            -- Properly configure ripgrep arguments to include hidden files and respect .gitignore
-            opts.additional_args = function()
-                return { "--hidden", "--no-ignore" }
-            end
-
-            -- Enable recursive search in subdirectories
-            opts.recurse_submodules = true
-            opts.follow = true  -- Follow symlinks
-
-            require('telescope.builtin').live_grep(opts)
-        end
+        
 
         telescope.setup({
             pickers = {
@@ -199,7 +171,7 @@ return {
         require("telescope").load_extension("fzf")
         -- Set keymaps
         vim.keymap.set("n", "<leader>gsl", "<cmd>Telescope git_stash<cr>", { desc = "Git Stash List" })
-        vim.keymap.set("n", "<leader>fD", custom_live_grep, { desc = "Live grep in directory" })
+        
         vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Git branches" })
         vim.keymap.set("n", "<leader>fc", "<cmd>Telescope colorscheme<cr>", { desc = "Color scheme" })
         vim.keymap.set("n", "<leader>fa", "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",{ desc = "Find all files" })
