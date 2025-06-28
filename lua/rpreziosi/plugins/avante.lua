@@ -6,9 +6,6 @@ return {
         { '<leader>aa', '<cmd>AvanteAsk<cr>', desc = 'Avante Ask' },
     },
     version = false, -- Never set this value to "*"! Never!
-    selector = {
-        provider = 'fzf_lua',
-    },
     opts = {
         provider = 'openai',
         providers = {
@@ -19,6 +16,21 @@ return {
                     max_completion_tokens = 100000
                 },
             },
+            openai_o3pro = {
+                __inherited_from = 'openai',
+                model = 'o3-pro-2023-05-03',
+                extra_request_body = {
+                    max_completion_tokens = 100000
+                },
+            },
+            openai_04mini = {
+                __inherited_from = 'openai',
+                model = 'o4-mini-2025-04-16',
+                extra_request_body = {
+                    max_completion_tokens = 100000
+                },
+
+            }
         },
         windows = {
             ---@type "right" | "left" | "top" | "bottom"
@@ -72,23 +84,6 @@ return {
         --- The below dependencies are optional,
         'ibhagwan/fzf-lua',
         'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
-        {
-            -- support for image pasting
-            'HakonHarnes/img-clip.nvim',
-            event = 'VeryLazy',
-            opts = {
-                -- recommended settings
-                default = {
-                    embed_image_as_base64 = false,
-                    prompt_for_file_name = false,
-                    drag_and_drop = {
-                        insert_mode = true,
-                    },
-                    -- required for Windows users
-                    use_absolute_path = true,
-                },
-            },
-        },
         {
             -- Make sure to set this up properly if you have lazy=true
             'MeanderingProgrammer/render-markdown.nvim',

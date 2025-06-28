@@ -25,7 +25,7 @@ return {
                     ['ctrl-x'] = actions.file_split,
                     ['ctrl-v'] = actions.file_vsplit,
                     ['ctrl-t'] = actions.file_tabedit,
-                    ['alt-q'] = actions.file_sel_to_qf,
+                    ['ctrl-w'] = actions.file_sel_to_qf,
                 },
             },
             buffers = {
