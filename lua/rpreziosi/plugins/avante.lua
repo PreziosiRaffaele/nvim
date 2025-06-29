@@ -30,7 +30,12 @@ return {
                     max_completion_tokens = 100000
                 },
 
-            }
+            },
+            copilot = {
+                is_env_set = function()
+                    return false
+                end,
+            },
         },
         windows = {
             ---@type "right" | "left" | "top" | "bottom"
