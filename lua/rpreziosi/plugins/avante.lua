@@ -1,9 +1,10 @@
 return {
     'yetone/avante.nvim',
-    cmd = { 'AvanteToggle', 'AvanteAsk' },
+    cmd = { 'AvanteToggle', 'AvanteAsk', 'AvanteModels'},
     keys = {
         { '<leader>at', '<cmd>AvanteToggle<cr>', desc = 'Avante' },
         { '<leader>aa', '<cmd>AvanteAsk<cr>', desc = 'Avante Ask' },
+        { '<leader>a?', '<cmd>AvanteModels<cr>', desc = 'Avante: select model' },
     },
     version = false, -- Never set this value to "*"! Never!
     opts = {
@@ -11,25 +12,21 @@ return {
         providers = {
             openai = {
                 endpoint = 'https://api.openai.com/v1',
-                model = 'o3-2025-04-16',
-                extra_request_body = {
-                    max_completion_tokens = 100000
-                },
+                model = 'o4-mini-2025-04-16',
             },
             openai_o3pro = {
                 __inherited_from = 'openai',
                 model = 'o3-pro-2023-05-03',
                 extra_request_body = {
-                    max_completion_tokens = 100000
+                    max_completion_tokens = 100000,
                 },
             },
-            openai_04mini = {
+            openai_o3 = {
                 __inherited_from = 'openai',
-                model = 'o4-mini-2025-04-16',
+                model = 'o3-2025-04-16',
                 extra_request_body = {
-                    max_completion_tokens = 100000
+                    max_completion_tokens = 100000,
                 },
-
             },
             copilot = {
                 is_env_set = function()
