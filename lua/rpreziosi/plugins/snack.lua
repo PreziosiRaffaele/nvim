@@ -7,6 +7,8 @@ return {
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         bigfile = { enabled = true },
+        lazygit = { enabled = false },
+        terminal = { enabled = false },
         dashboard = { enabled = false },
         explorer = { enabled = false },
         indent = { enabled = true, scope = { enabled = false } },
@@ -147,6 +149,13 @@ return {
                 })
             end,
             desc = 'Git Branches',
+        },
+        {
+            '<leader>u',
+            function()
+                Snacks.picker.undo()
+            end,
+            desc = 'Undo Tree',
         },
         {
             '<leader>fD',
