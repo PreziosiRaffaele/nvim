@@ -7,7 +7,7 @@ return {
     build = ':TSUpdate',
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = { "apex", "bash", "haskell", "nix", "rust", "soql", "sosl", "javascript", "typescript", "lua", "vim", "vimdoc", "markdown", "json", "jsonc", "html" },
+            ensure_installed = { "apex", "regex", "gitcommit", "bash", "haskell", "nix", "rust", "soql", "sosl", "javascript", "typescript", "lua", "vim", "vimdoc", "markdown", "json", "jsonc", "html" },
             auto_install = true,
 
             highlight = {

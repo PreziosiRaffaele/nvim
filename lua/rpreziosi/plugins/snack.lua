@@ -158,6 +158,16 @@ return {
             desc = 'Undo Tree',
         },
         {
+            '<leader>fn',
+            function()
+                local nvim_config_path = vim.fn.stdpath('config')
+                Snacks.picker.files({
+                    dirs = { nvim_config_path },
+                })
+            end,
+            desc = 'Nvim Configs',
+        },
+        {
             '<leader>fD',
             function()
                 local cwd = vim.fn.getcwd()
