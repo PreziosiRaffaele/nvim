@@ -6,7 +6,7 @@ return {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
-        bigfile = { enabled = true },
+        bigfile = { enabled = false },
         lazygit = { enabled = false },
         terminal = { enabled = false },
         dashboard = { enabled = false },
@@ -166,6 +166,13 @@ return {
                 })
             end,
             desc = 'Nvim Configs',
+        },
+        {
+            '<leader>db',
+            function()
+                Snacks.picker.diagnostics_buffer()
+            end,
+            desc = 'Buffer Diagnostics',
         },
         {
             '<leader>fD',
