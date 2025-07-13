@@ -41,7 +41,7 @@ return {
             end)
         end, { desc = "Git rename current branch" })
 
-        vim.keymap.set('n', '<leader>gsc', function()
+        vim.keymap.set('n', '<leader>gSc', function()
             vim.ui.input({
                 prompt = 'Stash message: ',
             }, function(message)

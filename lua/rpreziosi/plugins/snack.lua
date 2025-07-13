@@ -125,7 +125,7 @@ return {
             desc = 'Colorscheme',
         },
         {
-            '<leader>gsl',
+            '<leader>gSl',
             function()
                 Snacks.picker.git_stash()
             end,
@@ -156,6 +156,13 @@ return {
                 Snacks.picker.undo()
             end,
             desc = 'Undo Tree',
+        },
+        {
+            '<leader>gs',
+            function()
+                Snacks.picker.git_status()
+            end,
+            desc = 'Git Status',
         },
         {
             '<leader>fn',
