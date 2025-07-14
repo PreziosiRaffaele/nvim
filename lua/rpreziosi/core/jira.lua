@@ -53,7 +53,7 @@ function M.updateJiraField(issueKey, fieldId, fieldValue)
             'Accept: application/json',
             '--data',
             payload,
-            '-s', -- Silent mode
+            '-s',             -- Silent mode
             '-w',
             '\n%{http_code}', -- Append HTTP status code
         },
@@ -75,7 +75,7 @@ function M.updateJiraField(issueKey, fieldId, fieldValue)
                 end
 
                 local httpCodeLine = result[#result] -- Last line is HTTP code
-                table.remove(result, #result) -- Remove status code line
+                table.remove(result, #result)        -- Remove status code line
                 local responseBody = table.concat(result, '\n')
                 local httpCode = tonumber(httpCodeLine)
 
@@ -90,11 +90,11 @@ function M.updateJiraField(issueKey, fieldId, fieldValue)
                 else
                     vim.notify(
                         'Failed to update JIRA issue '
-                            .. issueKey
-                            .. '. HTTP Status: '
-                            .. (httpCodeLine or 'Unknown')
-                            .. '\nResponse: '
-                            .. responseBody,
+                        .. issueKey
+                        .. '. HTTP Status: '
+                        .. (httpCodeLine or 'Unknown')
+                        .. '\nResponse: '
+                        .. responseBody,
                         vim.log.levels.ERROR
                     )
                 end
@@ -144,7 +144,7 @@ function M.getJiraField(issueKey, fieldId, opts)
             authHeader,
             '--header',
             'Accept: application/json',
-            '-s', -- Silent mode
+            '-s',             -- Silent mode
             '-w',
             '\n%{http_code}', -- Append HTTP status code
         },
@@ -166,7 +166,7 @@ function M.getJiraField(issueKey, fieldId, opts)
                 end
 
                 local httpCodeLine = result[#result] -- Last line is HTTP code
-                table.remove(result, #result) -- Remove status code line
+                table.remove(result, #result)        -- Remove status code line
                 local responseBody = table.concat(result, '\n')
                 local httpCode = tonumber(httpCodeLine)
 
@@ -188,11 +188,11 @@ function M.getJiraField(issueKey, fieldId, opts)
                 else
                     vim.notify(
                         'Failed to fetch JIRA issue '
-                            .. issueKey
-                            .. '. HTTP Status: '
-                            .. (httpCodeLine or 'Unknown')
-                            .. '\nResponse: '
-                            .. responseBody,
+                        .. issueKey
+                        .. '. HTTP Status: '
+                        .. (httpCodeLine or 'Unknown')
+                        .. '\nResponse: '
+                        .. responseBody,
                         vim.log.levels.ERROR
                     )
                 end
@@ -215,6 +215,34 @@ function M.setup()
     end, {
         nargs = 0,
         desc = "Update JIRA custom field 'Solution Design' with current buffer content",
+    })
+
+-- Get Jira Description: use as argument the issue key
+    vim.api.nvim_create_user_command('JiraGetAcceptanceCriteria', function(opts)
+        local issueKey = opts.args
+        if not issueKey or issueKey == '' then
+            vim.notify('JIRA issue key is required.', vim.log.levels.ERROR)
+            return
+        end
+        M.getJiraField(issueKey, 'customfield_10209', {
+            on_result = function(desc)
+                if desc == nil then
+                    vim.notify('No description found for JIRA issue ' .. issueKey, vim.log.levels.WARN)
+                    return
+                end
+                local text
+                if type(desc) == 'table' then
+                    text = vim.fn.json_encode(desc)
+                else
+                    text = tostring(desc)
+                end
+                local lines = vim.split(text, '\n', { plain = true })
+                vim.api.nvim_put(lines, 'l', false, true)
+            end,
+        })
+    end, {
+        nargs = 1,
+        desc = 'Get JIRA issue description and paste at cursor',
     })
 
     -- Get Jira Description: use as argument the issue key
@@ -242,7 +270,7 @@ function M.setup()
         })
     end, {
         nargs = 1,
-        desc = "Get JIRA issue description and paste at cursor",
+        desc = 'Get JIRA issue description and paste at cursor',
     })
 end
 
