@@ -25,4 +25,3 @@ require('lazy').setup({
 -- Setup custom commands and functionality
 require('rpreziosi.core.gitlab').setup()
 require('rpreziosi.core.jira').setup()
-require('rpreziosi.core.apex-log-analyzer').setup()

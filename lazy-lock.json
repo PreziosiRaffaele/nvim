@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
+  "apex-log-analyzer.nvim": { "branch": "main", "commit": "96e5d80455da78445d529613d185a5aa6660ec6e" },
   "avante.nvim": { "branch": "main", "commit": "c4ce24e3c047c3283652aeb9a16114603d6f705c" },
   "blink.cmp": { "branch": "main", "commit": "485c03400608cb6534bbf84da8c1c471fc4808c0" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
