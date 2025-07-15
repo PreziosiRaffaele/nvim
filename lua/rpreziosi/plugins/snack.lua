@@ -55,6 +55,11 @@ return {
                     cmd = { 'delta' },
                 },
             },
+            formatters = {
+                file = {
+                    truncate = 100
+                }
+            }
         },
         notifier = { enabled = false },
         quickfile = { enabled = false },
