@@ -28,6 +28,7 @@ local function setup()
 
     -- Go back to normal mode
     vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Go back to normal mode' })
+    vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = 'Enter normal mode' })
 
     -- Delete all buffers with confirmation
     vim.keymap.set('n', '<leader>bA', function()
@@ -55,6 +56,9 @@ local function setup()
         end
         vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(messages, '\n'))
     end, {})
+
+    -- Reload buffer
+    vim.keymap.set('n', '<leader>rb', '<cmd>e!<CR>', { desc = 'Reload buffer' })
 
 end
 
