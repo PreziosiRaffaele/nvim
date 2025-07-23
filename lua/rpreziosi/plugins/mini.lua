@@ -70,7 +70,15 @@ return {
                     -- This also affects (purely informational) helper messages shown after
                     -- idle time if user input is required.
                     silent = false,
-                })
-        end
-    }
+                }
+            )
+        end,
+    },
+    {
+        'echasnovski/mini.splitjoin',
+        version = '*',
+        config = function()
+            require('mini.splitjoin').setup()
+        end,
+    },
 }
