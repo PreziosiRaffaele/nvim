@@ -25,6 +25,7 @@ return {
                 'json',
                 'jsonc',
                 'html',
+                'c'
             },
             auto_install = true,
             highlight = {

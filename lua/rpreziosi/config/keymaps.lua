@@ -28,7 +28,7 @@ local function setup()
 
     -- Go back to normal mode
     vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Go back to normal mode' })
-    vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = 'Enter normal mode' })
+    vim.keymap.set('t', 'JJ', '<C-\\><C-n>', { desc = 'Enter normal mode' })
 
     -- Delete all buffers with confirmation
     vim.keymap.set('n', '<leader>bA', function()
