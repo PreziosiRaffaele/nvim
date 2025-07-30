@@ -7,7 +7,7 @@ return {
     opts = {
         keymap = { preset = 'default' },
         completion = {
-            list = { selection = { preselect = false, auto_insert = false } },
+            list = { selection = { preselect = true, auto_insert = false } },
             menu = { border = 'single' },
             documentation = {
                 auto_show = true,

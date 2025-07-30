@@ -19,6 +19,7 @@ local function setup()
     vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
     vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
     vim.keymap.set('n', '<leader>bs', '<cmd>w<CR>', { desc = 'Save buffer' })
+    vim.keymap.set('n', '<leader>bS', '<cmd>wq<CR>', { desc = 'Save buffer and quit' })
     vim.keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { desc = 'Delete buffer' })
     vim.keymap.set('n', '<leader>bD', '<cmd>bd!<CR>', { desc = 'Force delete buffer' })
 

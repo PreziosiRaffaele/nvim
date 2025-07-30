@@ -28,6 +28,7 @@
   "plantuml-previewer.vim": { "branch": "master", "commit": "368a1f331c1ff29f6a3ee76facfca39a7f374b13" },
   "plantuml-syntax": { "branch": "master", "commit": "9d4900aa16674bf5bb8296a72b975317d573b547" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "render-markdown.nvim": { "branch": "main", "commit": "9e51b7711c6159511e966dc42fafd58a9db9ad1d" },
   "rose-pine": { "branch": "main", "commit": "f93360149e9ed4df8677fbb07c7231ea0fd03b97" },
   "sf.nvim": { "branch": "main", "commit": "1e710a294972eb7c65fda34454626791b540d67e" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
