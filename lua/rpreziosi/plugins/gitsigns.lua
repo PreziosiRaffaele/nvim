@@ -88,17 +88,6 @@ return {
                 map('n', '<leader>hp', gs.preview_hunk_inline, { desc = "Preview hunk" })
                 map('n', '<leader>hb', function() gs.blame_line { full = true } end, { desc = "Blame line" })
                 map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "Toggle line blame" })
-                map('n', '<leader>hd', function()
-                    -- Check if we're already in diff mode
-                    if vim.wo.diff then
-                        -- Exit diff mode
-                        vim.cmd('diffoff!')
-                        vim.cmd('only')
-                    else
-                        -- Enter diff mode
-                        gs.diffthis('~')
-                    end
-                end, { desc = "Toggle diff view" })
             end
         })
     end,

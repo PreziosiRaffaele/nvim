@@ -61,6 +61,9 @@ local function setup()
     -- Reload buffer
     vim.keymap.set('n', '<leader>rb', '<cmd>e!<CR>', { desc = 'Reload buffer' })
 
+    -- Diagnostic open float
+    vim.keymap.set('n', '<leader>hd', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+
 end
 
 return { setup = setup }
