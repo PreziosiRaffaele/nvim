@@ -77,6 +77,13 @@ return {
             desc = 'Smart Find Files',
         },
         {
+            '<leader>dl',
+            function()
+                Snacks.picker.diagnostics()
+            end,
+            desc = 'List Diagnostics',
+        },
+        {
             '<leader>ff',
             function()
                 Snacks.picker.smart()

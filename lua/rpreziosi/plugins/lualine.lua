@@ -1,6 +1,7 @@
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+
     config = function()
         local function sf_status()
             -- Cache the sf module to avoid multiple require calls
@@ -58,17 +59,46 @@ return {
         end
         _G.Gstatus_timer:start(0, 2000, vim.schedule_wrap(update_gstatus))
 
+
+        -- stylua: ignore
+        local colors = {
+            blue       = '#32748e',
+            cyan       = '#79dac8',
+            black      = '#15191e',
+            white      = '#c6c6c6',
+            red        = '#ff5189',
+            yellow     = '#f5c175',
+            grey       = '#262339',
+            background = '#191724',
+            pink       = '#ebbcba',
+            coral     = '#3788af',
+        }
+
+        local bubbles_theme = {
+            normal = {
+                a = { fg = colors.black, bg = colors.yellow, gui = 'bold' },
+                b = { fg = colors.white, bg = colors.grey },
+                c = { fg = colors.white, bg = colors.background },
+            },
+            terminal = {
+                a = { fg = colors.black, bg = colors.coral, gui = 'bold' },
+            },
+            insert = { a = { fg = colors.black, bg = colors.blue, gui = 'bold' } },
+            visual = { a = { fg = colors.black, bg = colors.cyan, gui = 'bold' } },
+            replace = { a = { fg = colors.black, bg = colors.red, gui = 'bold' } },
+            inactive = {
+                a = { fg = colors.white, bg = colors.black },
+                b = { fg = colors.white, bg = colors.black },
+                c = { fg = colors.white },
+            },
+        }
+
         require('lualine').setup({
             options = {
                 icons_enabled = false,
-                theme = 'auto',
-                disabled_filetypes = {
-                    statusline = {},
-                    winbar = {},
-                },
-                ignore_focus = {},
-                always_divide_middle = true,
-                always_show_tabline = true,
+                theme = bubbles_theme,
+                section_separators = { left = '', right = '' },
+                component_separators = '',
                 globalstatus = true,
                 refresh = {
                     statusline = 100,
@@ -77,30 +107,50 @@ return {
                 },
             },
             sections = {
-                lualine_a = { 'mode' },
+                lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
                 lualine_b = {
-                    'branch',
-                    function()
-                        if gstatus.ahead > 0 then
-                            return '↑' .. tostring(gstatus.ahead)
-                        end
-                        return ''
-                    end,
-                    function()
-                        if gstatus.behind > 0 then
-                            return '↓' .. tostring(gstatus.behind)
-                        end
-                        return ''
-                    end,
-                },
-                lualine_c = {
                     'filename',
-                    'diff',
                     'diagnostics',
                 },
-                lualine_x = { 'searchcount', sf_status},
+                lualine_c = {
+                    {
+                        'branch',
+                        icons_enabled = true,
+                        icon = '',
+                    },
+                    {
+                        function()
+                            if gstatus.ahead > 0 then
+                                return '↑' .. tostring(gstatus.ahead)
+                            end
+                            return ''
+                        end,
+                    },
+                    {
+                        function()
+                            if gstatus.behind > 0 then
+                                return '↓' .. tostring(gstatus.behind)
+                            end
+                            return ''
+                        end,
+
+                    },
+                    {
+                        'diff',
+                    },
+                },
+                lualine_x = {
+                    'searchcount',
+                    {
+                        sf_status,
+                        icons_enabled = true,
+                        icon = '󰢎',
+                    },
+                },
                 lualine_y = { 'filetype' },
-                lualine_z = { 'location' },
+                lualine_z = {
+                    { 'location', separator = { right = '' }, left_padding = 2 },
+                },
             },
             inactive_sections = {
                 lualine_a = {},
