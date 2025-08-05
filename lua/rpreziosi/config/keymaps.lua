@@ -15,7 +15,7 @@ local function setup()
         print('Copied to clipboard: ' .. base)
     end, { desc = 'Copy filename in the clipboard' })
 
-    -- Additional buffer 
+    -- Additional buffer
     vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
     vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
     vim.keymap.set('n', '<leader>bs', '<cmd>w<CR>', { desc = 'Save buffer' })
@@ -64,6 +64,9 @@ local function setup()
     -- Diagnostic open float
     vim.keymap.set('n', '<leader>hd', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
+    -- Execute in node
+    vim.keymap.set('n', '<leader>en', ':%w !tsx<CR>', { desc = 'Execute buffer in node' })
+    vim.keymap.set('v', '<leader>en', ":'<,'>w !tsx<CR>")
 end
 
 return { setup = setup }
