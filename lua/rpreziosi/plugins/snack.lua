@@ -93,9 +93,11 @@ return {
         {
             '<leader>fg',
             function()
-                Snacks.picker.grep()
+                Snacks.picker.grep({
+                    args = { '--ignore-case' },
+                })
             end,
-            desc = 'Grep',
+            desc = 'Grep (Ignore Case)',
         },
         {
             '<leader>fh',
